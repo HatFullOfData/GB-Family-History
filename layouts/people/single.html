@@ -7,7 +7,7 @@
     {{ partial "entity-header.html" (dict "page" . "taxonomies" (slice "surname" "tags")) }}
     {{ with .Params.portrait }}
       <figure class="person-portrait">
-        <img src="{{ . }}" alt="{{ $.Title }} portrait" loading="lazy">
+        <img src="{{ . | relURL }}" alt="{{ $.Title }} portrait" loading="lazy">
       </figure>
     {{ end }}
     {{ partial "metadata-list.html" (dict "items" (slice
