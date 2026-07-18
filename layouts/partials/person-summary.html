@@ -1,0 +1,4 @@
+<li>
+  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  {{ with .Params.birth.display }}<span> (b. {{ . }})</span>{{ end }}
+</li>

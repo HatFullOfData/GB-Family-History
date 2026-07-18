@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  <div>
+    {{ .Content }}
+  </div>
+
+  <ul>
+    {{ range .Pages.ByTitle }}
+      {{ partial "person-summary.html" . }}
+    {{ end }}
+  </ul>
+{{ end }}

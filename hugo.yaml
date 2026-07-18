@@ -1,0 +1,26 @@
+baseURL: "https://hatfullofdata.github.io/GB-Family-History/"
+languageCode: "en-gb"
+title: "GB Family History"
+enableRobotsTXT: true
+
+taxonomies:
+  surname: surnames
+  tag: tags
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 1
+    - name: "People"
+      url: "/people/"
+      weight: 2
+    - name: "Locations"
+      url: "/locations/"
+      weight: 3
+    - name: "Stories"
+      url: "/stories/"
+      weight: 4
+    - name: "Sources"
+      url: "/sources/"
+      weight: 5

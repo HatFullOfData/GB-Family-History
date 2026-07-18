@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <article>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.place_type }}<p><strong>Type:</strong> {{ . }}</p>{{ end }}
+    {{ with .Params.parent_location }}
+      {{ with site.GetPage . }}
+        <p><strong>Parent location:</strong> <a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+      {{ end }}
+    {{ end }}
+    {{ with .Params.coordinates }}
+      <p><strong>Coordinates:</strong> {{ .lat }}, {{ .lon }}</p>
+    {{ end }}
+    <div>{{ .Content }}</div>
+    {{ partial "relationship-list.html" (dict "title" "Sources" "values" .Params.sources) }}
+  </article>
+{{ end }}

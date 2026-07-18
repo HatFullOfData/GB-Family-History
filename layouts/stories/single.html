@@ -1,0 +1,10 @@
+{{ define "main" }}
+  <article>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.date }}<p><strong>Date:</strong> {{ . }}</p>{{ end }}
+    {{ partial "relationship-list.html" (dict "title" "People" "values" .Params.people) }}
+    {{ partial "relationship-list.html" (dict "title" "Locations" "values" .Params.locations) }}
+    {{ partial "relationship-list.html" (dict "title" "Sources" "values" .Params.sources) }}
+    <div>{{ .Content }}</div>
+  </article>
+{{ end }}
