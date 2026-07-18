@@ -97,3 +97,15 @@ footer {
   border-left-color: #cc8800;
   background: #fff8e8;
 }
+
+.person-portrait {
+  margin: 0 0 1rem 0;
+}
+
+.person-portrait img {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
