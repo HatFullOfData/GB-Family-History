@@ -1,7 +1,7 @@
 {{ define "main" }}
-  {{ $birthPlace := nil }}
+  {{ $birthPlace := "" }}
   {{ with .Params.birth.place }}{{ $birthPlace = site.GetPage . }}{{ end }}
-  {{ $deathPlace := nil }}
+  {{ $deathPlace := "" }}
   {{ with .Params.death.place }}{{ $deathPlace = site.GetPage . }}{{ end }}
   <article>
     {{ partial "entity-header.html" (dict "page" . "taxonomies" (slice "surname" "tags")) }}

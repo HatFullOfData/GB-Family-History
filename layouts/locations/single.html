@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{ $parentLocation := nil }}
+  {{ $parentLocation := "" }}
   {{ with .Params.parent_location }}{{ $parentLocation = site.GetPage . }}{{ end }}
   <article>
     {{ partial "entity-header.html" (dict "page" . "taxonomies" (slice "place_type" "tags")) }}
