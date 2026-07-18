@@ -1,5 +1,5 @@
 baseURL: "https://hatfullofdata.github.io/GB-Family-History/"
-languageCode: "en-gb"
+locale: "en-gb"
 title: "GB Family History"
 enableRobotsTXT: true
 

@@ -3,7 +3,7 @@
     <h1>{{ .Title }}</h1>
     {{ with .Params.repository }}<p><strong>Repository:</strong> {{ . }}</p>{{ end }}
     {{ with .Params.citation }}<p><strong>Citation:</strong> {{ . }}</p>{{ end }}
-    {{ with .Params.date }}<p><strong>Date:</strong> {{ . }}</p>{{ end }}
+    {{ with .Params.source_date }}<p><strong>Date:</strong> {{ . }}</p>{{ end }}
     {{ with .Params.url }}<p><strong>URL:</strong> <a href="{{ . }}">{{ . }}</a></p>{{ end }}
     <div>{{ .Content }}</div>
   </article>

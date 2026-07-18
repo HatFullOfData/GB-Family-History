@@ -1,6 +1,6 @@
 ---
 title: "{{ replace .Name \"-\" \" \" | title }}"
-date: ""
+story_date: ""
 people: []
 locations: []
 sources: []

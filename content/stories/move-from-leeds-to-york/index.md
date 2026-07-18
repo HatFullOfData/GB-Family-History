@@ -1,6 +1,6 @@
 ---
 title: "Move from Leeds to York"
-date: "1908"
+story_date: "1908"
 people:
   - "/people/elizabeth-brown/"
   - "/people/thomas-wilson/"
