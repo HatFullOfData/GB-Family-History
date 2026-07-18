@@ -1,0 +1,14 @@
+<section>
+  <h2>{{ .title }}</h2>
+  {{ with .values }}
+    <ul>
+      {{ range . }}
+        {{ with site.GetPage . }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  {{ else }}
+    <p>No entries yet.</p>
+  {{ end }}
+</section>

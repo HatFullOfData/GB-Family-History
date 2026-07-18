@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  <div>
+    {{ .Content }}
+  </div>
+
+  <section>
+    <h2>Start here</h2>
+    <ul>
+      <li><a href="{{ "/people/" | relURL }}">Browse people</a></li>
+    </ul>
+  </section>
+{{ end }}

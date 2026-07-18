@@ -1,0 +1,41 @@
+{{ define "main" }}
+  <article>
+    <h1>{{ .Title }}</h1>
+
+    {{ with .Params.birth.display }}
+      <p><strong>Born:</strong> {{ . }}</p>
+    {{ end }}
+
+    {{ with .Params.death.display }}
+      <p><strong>Died:</strong> {{ . }}</p>
+    {{ end }}
+
+    {{ with .Params.biography }}
+      <div>{{ . | markdownify }}</div>
+    {{ end }}
+
+    {{ partial "relationship-list.html" (dict "title" "Parents" "values" .Params.parents) }}
+
+    <section>
+      <h2>Spouses</h2>
+      {{ with .Params.spouses }}
+        <ul>
+          {{ range . }}
+            <li>
+              {{ with site.GetPage .person }}
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              {{ end }}
+              {{ with .display }} ({{ . }}){{ end }}
+            </li>
+          {{ end }}
+        </ul>
+      {{ else }}
+        <p>No spouse links recorded.</p>
+      {{ end }}
+    </section>
+
+    {{ partial "relationship-list.html" (dict "title" "Locations" "values" .Params.locations) }}
+    {{ partial "relationship-list.html" (dict "title" "Stories" "values" .Params.stories) }}
+    {{ partial "relationship-list.html" (dict "title" "Sources" "values" .Params.sources) }}
+  </article>
+{{ end }}
