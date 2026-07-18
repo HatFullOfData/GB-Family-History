@@ -7,8 +7,8 @@ surname: "Graham-Brown"
 known_as: "Harry"
 
 birth:
-  display: ""
-  place: ""
+  display: "25 November 1963"
+  place: "Darlington, England"
 
 death:
   display: ""
