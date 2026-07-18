@@ -1,4 +1,5 @@
 ---
+id: "P-WIL-18800602-01"
 title: "Thomas Wilson"
 summary: "Thomas Wilson worked in Yorkshire and moved with his family to York in the early 1900s."
 given_name: "Thomas"

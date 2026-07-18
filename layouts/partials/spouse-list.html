@@ -1,19 +1,33 @@
 {{ $page := .page }}
 {{ $spouses := slice }}
 {{ range $page.Params.spouses }}
-  {{ $display := .display }}
-  {{ with site.GetPage .person }}
-    {{ $spouses = $spouses | append (dict "page" . "display" $display) }}
-  {{ end }}
-{{ end }}
-{{ range where site.RegularPages "Section" "people" }}
-  {{ $person := . }}
-  {{ if ne $person.RelPermalink $page.RelPermalink }}
-    {{ range $person.Params.spouses }}
-      {{ if eq .person $page.RelPermalink }}
-        {{ $spouses = $spouses | append (dict "page" $person "display" .display) }}
+  {{ $entry := . }}
+  {{ $target := false }}
+  {{ $display := "" }}
+
+  {{ if reflect.IsMap $entry }}
+    {{ with index $entry "display" }}
+      {{ $display = . }}
+    {{ end }}
+
+    {{ with index $entry "person_id" }}
+      {{ $matches := where site.RegularPages "Params.id" . }}
+      {{ with first 1 $matches }}
+        {{ $target = index . 0 }}
       {{ end }}
     {{ end }}
+
+    {{ if not $target }}
+      {{ with index $entry "person" }}
+        {{ $target = site.GetPage . }}
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    {{ $target = site.GetPage $entry }}
+  {{ end }}
+
+  {{ with $target }}
+    {{ $spouses = $spouses | append (dict "page" . "display" $display) }}
   {{ end }}
 {{ end }}
 <section>

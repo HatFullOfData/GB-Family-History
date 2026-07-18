@@ -23,10 +23,6 @@ parents: []
 spouses:
   - person_id: "P-CAR-19400518-01"
     person: "/people/michael-ashley-carpenter/"
-    status: "married"
-    marriage:
-      date: "1963-07-13"
-      display: "13 July 1963"
-      place: ""
+    display: "married 13 July 1963"
 ---
 Frances Mary Carpenter appears in the family history archive, with a recorded birth of 12 October 1943.

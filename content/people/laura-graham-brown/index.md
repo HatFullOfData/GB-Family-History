@@ -4,6 +4,7 @@ title: "Laura Graham-Brown"
 summary: "Laura Graham-Brown was born in Lusaka, Zambia."
 given_name: "Laura"
 surname: "Graham-Brown"
+portrait: "/images/people/lauragb.png"
 
 birth:
   display: "12 November 1968"

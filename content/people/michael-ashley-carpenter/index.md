@@ -22,10 +22,6 @@ parents: []
 spouses:
   - person_id: "P-CAR-19431012-01"
     person: "/people/frances-mary-carpenter/"
-    status: "married"
-    marriage:
-      date: "1963-07-13"
-      display: "13 July 1963"
-      place: ""
+    display: "married 13 July 1963"
 ---
 Michael Ashley Carpenter appears in the family history archive, with a recorded birth of 18 May 1940.
