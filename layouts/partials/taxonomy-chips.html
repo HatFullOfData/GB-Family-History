@@ -1,0 +1,17 @@
+{{ $page := .page }}
+{{ $scratch := newScratch }}
+{{ range .taxonomies }}
+  {{ $taxonomy := . }}
+  {{ with $page.GetTerms $taxonomy }}
+    {{ range . }}
+      {{ $scratch.Add "terms" (slice (dict "title" .LinkTitle "url" .RelPermalink)) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ with $scratch.Get "terms" }}
+  <ul class="taxonomy-chips">
+    {{ range . }}
+      <li><a href="{{ .url }}">{{ .title }}</a></li>
+    {{ end }}
+  </ul>
+{{ end }}

@@ -3,10 +3,5 @@
   <div>
     {{ .Content }}
   </div>
-
-  <ul>
-    {{ range .Pages.ByTitle }}
-      {{ partial "person-summary.html" . }}
-    {{ end }}
-  </ul>
+  {{ partial "page-list.html" (dict "pages" .Pages "empty" "No entries yet.") }}
 {{ end }}

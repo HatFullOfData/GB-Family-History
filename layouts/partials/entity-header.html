@@ -1,0 +1,9 @@
+<header class="entity-header">
+  <h1>{{ .page.Title }}</h1>
+  {{ with .page.Params.summary }}
+    <p class="entity-summary">{{ . }}</p>
+  {{ end }}
+  {{ with .taxonomies }}
+    {{ partial "taxonomy-chips.html" (dict "page" $.page "taxonomies" .) }}
+  {{ end }}
+</header>

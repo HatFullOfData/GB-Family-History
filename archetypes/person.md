@@ -1,5 +1,6 @@
 ---
 title: "{{ replace .Name \"-\" \" \" | title }}"
+summary: ""
 given_name: ""
 surname: ""
 
@@ -13,10 +14,5 @@ death:
 
 parents: []
 spouses: []
-locations: []
-stories: []
-sources: []
 tags: []
-
-biography: ""
 ---

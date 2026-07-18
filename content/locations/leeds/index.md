@@ -1,13 +1,11 @@
 ---
 title: "Leeds"
+summary: "A major Yorkshire city that appears repeatedly in this family history."
 place_type: "city"
 parent_location: "/locations/west-yorkshire/"
 coordinates:
   lat: 53.8008
   lon: -1.5491
-
-sources:
-  - "/sources/1901-census-brown-family/"
 
 tags:
   - "west yorkshire"

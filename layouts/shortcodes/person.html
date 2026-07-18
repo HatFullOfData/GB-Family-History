@@ -1,0 +1,7 @@
+{{ with site.GetPage (.Get "page") }}
+  <p class="embedded-link">
+    <strong>Person:</strong>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{ with .Params.birth.display }}<span> (b. {{ . }})</span>{{ end }}
+  </p>
+{{ end }}

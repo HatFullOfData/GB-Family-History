@@ -1,5 +1,6 @@
 ---
 title: "1901 Census - Brown Family"
+summary: "A census source used to support family location and household details."
 repository: "The National Archives"
 citation: "1901 England Census, RG13"
 url: ""

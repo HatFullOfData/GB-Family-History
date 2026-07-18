@@ -1,0 +1,33 @@
+{{ $page := .page }}
+{{ $spouses := slice }}
+{{ range $page.Params.spouses }}
+  {{ $display := .display }}
+  {{ with site.GetPage .person }}
+    {{ $spouses = $spouses | append (dict "page" . "display" $display) }}
+  {{ end }}
+{{ end }}
+{{ range where site.RegularPages "Section" "people" }}
+  {{ $person := . }}
+  {{ if ne $person.RelPermalink $page.RelPermalink }}
+    {{ range $person.Params.spouses }}
+      {{ if eq .person $page.RelPermalink }}
+        {{ $spouses = $spouses | append (dict "page" $person "display" .display) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+<section>
+  <h2>Spouses</h2>
+  {{ with $spouses }}
+    <ul>
+      {{ range . }}
+        <li>
+          <a href="{{ .page.RelPermalink }}">{{ .page.Title }}</a>
+          {{ with .display }} ({{ . }}){{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  {{ else }}
+    <p>No spouse links recorded.</p>
+  {{ end }}
+</section>

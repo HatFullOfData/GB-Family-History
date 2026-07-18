@@ -1,41 +1,20 @@
 {{ define "main" }}
+  {{ $birthPlace := nil }}
+  {{ with .Params.birth.place }}{{ $birthPlace = site.GetPage . }}{{ end }}
+  {{ $deathPlace := nil }}
+  {{ with .Params.death.place }}{{ $deathPlace = site.GetPage . }}{{ end }}
   <article>
-    <h1>{{ .Title }}</h1>
-
-    {{ with .Params.birth.display }}
-      <p><strong>Born:</strong> {{ . }}</p>
-    {{ end }}
-
-    {{ with .Params.death.display }}
-      <p><strong>Died:</strong> {{ . }}</p>
-    {{ end }}
-
-    {{ with .Params.biography }}
-      <div>{{ . | markdownify }}</div>
-    {{ end }}
-
-    {{ partial "relationship-list.html" (dict "title" "Parents" "values" .Params.parents) }}
-
-    <section>
-      <h2>Spouses</h2>
-      {{ with .Params.spouses }}
-        <ul>
-          {{ range . }}
-            <li>
-              {{ with site.GetPage .person }}
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-              {{ end }}
-              {{ with .display }} ({{ . }}){{ end }}
-            </li>
-          {{ end }}
-        </ul>
-      {{ else }}
-        <p>No spouse links recorded.</p>
-      {{ end }}
-    </section>
-
-    {{ partial "relationship-list.html" (dict "title" "Locations" "values" .Params.locations) }}
-    {{ partial "relationship-list.html" (dict "title" "Stories" "values" .Params.stories) }}
-    {{ partial "relationship-list.html" (dict "title" "Sources" "values" .Params.sources) }}
+    {{ partial "entity-header.html" (dict "page" . "taxonomies" (slice "surname" "tags")) }}
+    {{ partial "metadata-list.html" (dict "items" (slice
+      (dict "label" "Born" "value" .Params.birth.display)
+      (dict "label" "Birth place" "page" $birthPlace)
+      (dict "label" "Died" "value" .Params.death.display)
+      (dict "label" "Death place" "page" $deathPlace)
+    )) }}
+    <div>{{ .Content }}</div>
+    {{ partial "relationship-list.html" (dict "title" "Parents" "values" .Params.parents "empty" "No parent links recorded.") }}
+    {{ partial "spouse-list.html" (dict "page" .) }}
+    {{ partial "backlink-list.html" (dict "page" . "section" "people" "param" "parents" "title" "Children" "empty" "No child links recorded.") }}
+    {{ partial "backlink-list.html" (dict "page" . "section" "stories" "param" "people" "title" "Stories" "empty" "No related stories yet.") }}
   </article>
 {{ end }}
