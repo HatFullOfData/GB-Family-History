@@ -12,7 +12,11 @@ birth:
 death:
   display: ""
 
-parents: []
+parents:
+  - person_id: "P-CAR-19400518-01"
+    person: "/people/michael-ashley-carpenter/"
+  - person_id: "P-CAR-19431012-01"
+    person: "/people/frances-mary-carpenter/"
 spouses:
   - person_id: "P-GRB-19631125-01"
     person: "/people/george-graham-brown/"

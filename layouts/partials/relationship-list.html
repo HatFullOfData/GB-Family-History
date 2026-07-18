@@ -3,7 +3,27 @@
   {{ with .values }}
     <ul>
       {{ range . }}
-        {{ with site.GetPage . }}
+        {{ $entry := . }}
+        {{ $target := false }}
+
+        {{ if reflect.IsMap $entry }}
+          {{ with index $entry "person" }}
+            {{ $target = site.GetPage . }}
+          {{ end }}
+
+          {{ if not $target }}
+            {{ with index $entry "person_id" }}
+              {{ $matches := where site.RegularPages "Params.id" . }}
+              {{ with first 1 $matches }}
+                {{ $target = index . 0 }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ else }}
+          {{ $target = site.GetPage $entry }}
+        {{ end }}
+
+        {{ with $target }}
           {{ if $.render }}
             {{ partial $.render . }}
           {{ else }}
