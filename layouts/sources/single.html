@@ -1,10 +1,13 @@
 {{ define "main" }}
   <article>
-    <h1>{{ .Title }}</h1>
-    {{ with .Params.repository }}<p><strong>Repository:</strong> {{ . }}</p>{{ end }}
-    {{ with .Params.citation }}<p><strong>Citation:</strong> {{ . }}</p>{{ end }}
-    {{ with .Params.source_date }}<p><strong>Date:</strong> {{ . }}</p>{{ end }}
-    {{ with .Params.url }}<p><strong>URL:</strong> <a href="{{ . }}">{{ . }}</a></p>{{ end }}
+    {{ partial "entity-header.html" (dict "page" . "taxonomies" (slice "tags")) }}
+    {{ partial "metadata-list.html" (dict "items" (slice
+      (dict "label" "Repository" "value" .Params.repository)
+      (dict "label" "Citation" "value" .Params.citation)
+      (dict "label" "Date" "value" .Params.source_date)
+      (dict "label" "URL" "url" .Params.url)
+    )) }}
     <div>{{ .Content }}</div>
+    {{ partial "backlink-list.html" (dict "page" . "section" "stories" "param" "sources" "title" "Cited in stories" "empty" "No citing stories yet.") }}
   </article>
 {{ end }}

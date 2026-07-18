@@ -1,10 +1,10 @@
 {{ define "main" }}
   <article>
-    <h1>{{ .Title }}</h1>
-    {{ with .Params.story_date }}<p><strong>Date:</strong> {{ . }}</p>{{ end }}
-    {{ partial "relationship-list.html" (dict "title" "People" "values" .Params.people) }}
+    {{ partial "entity-header.html" (dict "page" . "taxonomies" (slice "tags")) }}
+    {{ partial "metadata-list.html" (dict "items" (slice (dict "label" "Date" "value" .Params.story_date))) }}
     {{ partial "relationship-list.html" (dict "title" "Locations" "values" .Params.locations) }}
-    {{ partial "relationship-list.html" (dict "title" "Sources" "values" .Params.sources) }}
+    {{ partial "relationship-list.html" (dict "title" "People" "values" .Params.people "render" "person-summary.html") }}
+    {{ partial "relationship-list.html" (dict "title" "Sources" "values" .Params.sources "render" "source-card.html" "empty" "No source links recorded.") }}
     <div>{{ .Content }}</div>
   </article>
 {{ end }}

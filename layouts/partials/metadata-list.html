@@ -1,0 +1,22 @@
+{{ with .items }}
+  <dl class="metadata-list">
+    {{ range . }}
+      {{ if or .value .page .url }}
+        <div>
+          <dt>{{ .label }}</dt>
+          <dd>
+            {{ with .page }}
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{ else }}
+              {{ with .url }}
+                <a href="{{ . }}">{{ . }}</a>
+              {{ else }}
+                {{ .value }}
+              {{ end }}
+            {{ end }}
+          </dd>
+        </div>
+      {{ end }}
+    {{ end }}
+  </dl>
+{{ end }}

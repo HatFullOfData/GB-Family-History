@@ -6,6 +6,7 @@ enableRobotsTXT: true
 taxonomies:
   surname: surnames
   tag: tags
+  place_type: place-types
 
 menu:
   main:

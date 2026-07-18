@@ -1,0 +1,25 @@
+{{ $page := .page }}
+{{ $pages := where site.RegularPages "Section" .section }}
+{{ $key := printf "Params.%s" .param }}
+{{ $matches := slice }}
+{{ if eq (.match | default "intersect") "eq" }}
+  {{ $matches = where $pages $key "eq" $page.RelPermalink }}
+{{ else }}
+  {{ $matches = where $pages $key "intersect" (slice $page.RelPermalink) }}
+{{ end }}
+<section>
+  <h2>{{ .title }}</h2>
+  {{ with sort $matches "Title" }}
+    <ul>
+      {{ range . }}
+        {{ if $.render }}
+          {{ partial $.render . }}
+        {{ else }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  {{ else }}
+    <p>{{ .empty | default "No entries yet." }}</p>
+  {{ end }}
+</section>

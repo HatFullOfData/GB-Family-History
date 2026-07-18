@@ -1,0 +1,6 @@
+{{ with site.GetPage (.Get "page") }}
+  <p class="embedded-link">
+    <strong>Location:</strong>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </p>
+{{ end }}

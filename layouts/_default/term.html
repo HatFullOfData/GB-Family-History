@@ -1,0 +1,7 @@
+{{ define "main" }}
+  <article>
+    <h1>{{ .Title }}</h1>
+    <p>Entries filed under {{ .Data.Singular }}.</p>
+    {{ partial "page-list.html" (dict "pages" .Pages "empty" "No entries yet.") }}
+  </article>
+{{ end }}

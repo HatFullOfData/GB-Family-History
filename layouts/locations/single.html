@@ -1,16 +1,14 @@
 {{ define "main" }}
+  {{ $parentLocation := "" }}
+  {{ with .Params.parent_location }}{{ $parentLocation = site.GetPage . }}{{ end }}
   <article>
-    <h1>{{ .Title }}</h1>
-    {{ with .Params.place_type }}<p><strong>Type:</strong> {{ . }}</p>{{ end }}
-    {{ with .Params.parent_location }}
-      {{ with site.GetPage . }}
-        <p><strong>Parent location:</strong> <a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
-      {{ end }}
-    {{ end }}
-    {{ with .Params.coordinates }}
-      <p><strong>Coordinates:</strong> {{ .lat }}, {{ .lon }}</p>
-    {{ end }}
+    {{ partial "entity-header.html" (dict "page" . "taxonomies" (slice "place_type" "tags")) }}
+    {{ partial "metadata-list.html" (dict "items" (slice
+      (dict "label" "Parent location" "page" $parentLocation)
+      (dict "label" "Coordinates" "value" (printf "%v, %v" .Params.coordinates.lat .Params.coordinates.lon))
+    )) }}
     <div>{{ .Content }}</div>
-    {{ partial "relationship-list.html" (dict "title" "Sources" "values" .Params.sources) }}
+    {{ partial "backlink-list.html" (dict "page" . "section" "locations" "param" "parent_location" "match" "eq" "title" "Child locations" "empty" "No child locations recorded.") }}
+    {{ partial "backlink-list.html" (dict "page" . "section" "stories" "param" "locations" "title" "Stories" "empty" "No related stories yet.") }}
   </article>
 {{ end }}

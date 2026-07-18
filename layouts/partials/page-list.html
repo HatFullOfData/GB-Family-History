@@ -1,0 +1,13 @@
+{{ with .pages }}
+  <ul>
+    {{ range sort . "Title" }}
+      {{ if eq .Section "people" }}
+        {{ partial "person-summary.html" . }}
+      {{ else }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    {{ end }}
+  </ul>
+{{ else }}
+  <p>{{ .empty | default "No entries yet." }}</p>
+{{ end }}

@@ -4,11 +4,15 @@
     <ul>
       {{ range . }}
         {{ with site.GetPage . }}
-          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{ if $.render }}
+            {{ partial $.render . }}
+          {{ else }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{ end }}
         {{ end }}
       {{ end }}
     </ul>
   {{ else }}
-    <p>No entries yet.</p>
+    <p>{{ .empty | default "No entries yet." }}</p>
   {{ end }}
 </section>

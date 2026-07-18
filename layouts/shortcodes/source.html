@@ -1,0 +1,7 @@
+{{ with site.GetPage (.Get "page") }}
+  <p class="embedded-link">
+    <strong>Source:</strong>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{ with .Params.citation }}<span> — {{ . }}</span>{{ end }}
+  </p>
+{{ end }}

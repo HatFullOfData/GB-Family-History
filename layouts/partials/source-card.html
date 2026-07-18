@@ -1,0 +1,5 @@
+<li class="source-card">
+  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  {{ with .Params.citation }}<span>{{ . }}</span>{{ end }}
+  {{ with .Params.repository }}<span>{{ . }}</span>{{ end }}
+</li>
