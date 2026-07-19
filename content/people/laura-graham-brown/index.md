@@ -21,6 +21,10 @@ parents:
 spouses:
   - person_id: "P-GRB-19631125-01"
     person: "/people/george-graham-brown/"
-    display: "married 9 April 1994 at Stowe School, Buckingham"
+    status: "married"
+    marriage:
+      date: "1994-04-09"
+      display: "9 April 1994"
+      place: "Stowe School, Buckingham"
 ---
 Laura Graham-Brown was born on 12 November 1968 in Lusaka, Zambia.
