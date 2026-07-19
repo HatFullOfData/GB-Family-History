@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Surnames on GB Family History</title>
-    <link>http://localhost:1313/GB-Family-History/surnames/</link>
+    <link>https://hatfullofdata.github.io/GB-Family-History/surnames/</link>
     <description>Recent content in Surnames on GB Family History</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/GB-Family-History/surnames/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hatfullofdata.github.io/GB-Family-History/surnames/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

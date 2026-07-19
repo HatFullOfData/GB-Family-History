@@ -8,6 +8,20 @@
     <language>en</language>
     <atom:link href="http://localhost:1313/GB-Family-History/people/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>David Kimpton</title>
+      <link>http://localhost:1313/GB-Family-History/people/david-kimpton/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/GB-Family-History/people/david-kimpton/</guid>
+      <description>David Kimpton lived from 1871 to 1913 and worked as a blacksmith.</description>
+    </item>
+    <item>
+      <title>Elizabeth Annie Kimpton</title>
+      <link>http://localhost:1313/GB-Family-History/people/elizabeth-annie-kimpton/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/GB-Family-History/people/elizabeth-annie-kimpton/</guid>
+      <description>Elizabeth Annie Kimpton, nee Timberlake, lived from 1871 to 1938 and worked as a dressmaker.</description>
+    </item>
+    <item>
       <title>Frances Mary Carpenter</title>
       <link>http://localhost:1313/GB-Family-History/people/frances-mary-carpenter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

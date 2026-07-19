@@ -18,7 +18,11 @@ death:
   display: "1984"
   place: ""
 
-parents: []
+parents:
+  - person_id: "P-KIM-1871-01"
+    person: "/people/david-kimpton/"
+  - person_id: "P-KIM-1871-02"
+    person: "/people/elizabeth-annie-kimpton/"
 spouses:
   - person_id: "P-TUR-1949-01"
     person: "/people/muriel-augusta-turner/"

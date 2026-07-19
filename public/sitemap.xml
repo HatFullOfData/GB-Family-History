@@ -2,50 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/GB-Family-History/sources/1901-census-brown-family/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/sources/1901-census-brown-family/</loc>
   </url><url>
-    <loc>http://localhost:1313/GB-Family-History/families/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/people/david-kimpton/</loc>
   </url><url>
-    <loc>http://localhost:1313/GB-Family-History/people/frances-mary-carpenter/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/people/elizabeth-annie-kimpton/</loc>
   </url><url>
-    <loc>http://localhost:1313/GB-Family-History/people/frederick-david-kimpton/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/families/</loc>
   </url><url>
-    <loc>http://localhost:1313/GB-Family-History/people/george-graham-brown/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/people/frances-mary-carpenter/</loc>
   </url><url>
-    <loc>http://localhost:1313/GB-Family-History/documents/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/people/frederick-david-kimpton/</loc>
   </url><url>
-    <loc>http://localhost:1313/GB-Family-History/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/people/george-graham-brown/</loc>
   </url><url>
-    <loc>http://localhost:1313/GB-Family-History/people/joan-sheppard/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/documents/</loc>
   </url><url>
-    <loc>http://localhost:1313/GB-Family-History/people/laura-graham-brown/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/</loc>
   </url><url>
-    <loc>http://localhost:1313/GB-Family-History/locations/leeds/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/people/joan-sheppard/</loc>
   </url><url>
-    <loc>http://localhost:1313/GB-Family-History/locations/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/people/laura-graham-brown/</loc>
   </url><url>
-    <loc>http://localhost:1313/GB-Family-History/people/michael-ashley-carpenter/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/locations/leeds/</loc>
   </url><url>
-    <loc>http://localhost:1313/GB-Family-History/stories/move-from-leeds-to-york/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/locations/</loc>
   </url><url>
-    <loc>http://localhost:1313/GB-Family-History/people/muriel-augusta-turner/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/people/michael-ashley-carpenter/</loc>
   </url><url>
-    <loc>http://localhost:1313/GB-Family-History/people/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/stories/move-from-leeds-to-york/</loc>
   </url><url>
-    <loc>http://localhost:1313/GB-Family-History/people-directory/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/people/muriel-augusta-turner/</loc>
   </url><url>
-    <loc>http://localhost:1313/GB-Family-History/galleries/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/people/</loc>
   </url><url>
-    <loc>http://localhost:1313/GB-Family-History/place-types/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/people-directory/</loc>
   </url><url>
-    <loc>http://localhost:1313/GB-Family-History/sources/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/galleries/</loc>
   </url><url>
-    <loc>http://localhost:1313/GB-Family-History/stories/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/place-types/</loc>
   </url><url>
-    <loc>http://localhost:1313/GB-Family-History/surnames/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/sources/</loc>
   </url><url>
-    <loc>http://localhost:1313/GB-Family-History/tags/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/stories/</loc>
   </url><url>
-    <loc>http://localhost:1313/GB-Family-History/tags/west-yorkshire/</loc>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/surnames/</loc>
+  </url><url>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/tags/</loc>
+  </url><url>
+    <loc>https://hatfullofdata.github.io/GB-Family-History/tags/west-yorkshire/</loc>
   </url>
 </urlset>
