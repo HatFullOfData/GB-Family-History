@@ -33,14 +33,11 @@
 <section>
   <h2>Spouses</h2>
   {{ with $spouses }}
-
+    <div class="spouse-list">
       {{ range . }}
-        <li>
-          <a href="{{ .page.RelPermalink }}">{{ .page.Title }}</a>
-          {{ with .display }} ({{ . }}){{ end }}
-        </li>
+        {{ partial "person-summary.html" .page }}
       {{ end }}
-
+    </div>
   {{ else }}
     <p>No spouse links recorded.</p>
   {{ end }}
