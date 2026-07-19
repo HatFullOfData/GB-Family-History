@@ -116,4 +116,6 @@ footer {
   height: auto;
   border-radius: 8px;
   display: block;
+  float: left;
+  margin-right: 0.5rem;
 }
