@@ -3,12 +3,12 @@
   {{ with .Params.portrait }}
     {{ $imgsrc = . | relURL }}
   {{ end }}
-  {{ with .Params.portrait }}
-    <figure class="person-thumb">
-      <img src="{{ $imgsrc }}" alt="{{ $.Title }} portrait" loading="lazy">
-    </figure>
-  {{ end }}
-  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  
+  <figure class="person-thumb">
+    <img src="{{ $imgsrc }}" alt="{{ $.Title }} portrait" loading="lazy">
+  </figure>
+
+  <a href="{{ .RelPermalink }}">{{ .Title }}</a><br/>
   {{ $birthyear := "????" }}
   {{ with .Params.birth.date }}
     {{ $birth := printf "%v" . }}
