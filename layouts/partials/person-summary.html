@@ -1,4 +1,4 @@
-<li>
+<div class="person-summary">
   <a href="{{ .RelPermalink }}">{{ .Title }}</a>
   {{ $birthyear := "????" }}
   {{ with .Params.birth.date }}
@@ -23,4 +23,4 @@
     {{ end }}
   {{ end }}
   <span>( {{ $birthyear }} - {{ $deathyear }} )</span>
-</li>
+</div>
