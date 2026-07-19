@@ -114,8 +114,13 @@ footer {
   max-width: 50px;
   width: 100%;
   height: auto;
-  border-radius: 2px;
+  border-radius: 25px;
   display: block;
   float: left;
   margin-right: 0.5rem;
+}
+
+.extrainfo {
+  font-size: 0.8rem;
+  color: #999;
 }
