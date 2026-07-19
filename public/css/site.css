@@ -216,13 +216,28 @@ footer {
 
 .ancestor-tree-box {
   box-sizing: border-box;
-  min-height: 4.75rem;
+  min-height: 6.4rem;
   padding: 0.65rem;
   border: 1px solid #bbb;
   border-radius: 6px;
   background: #fff;
   line-height: 1.2;
   text-align: center;
+}
+
+.ancestor-tree-thumb {
+  display: block;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin: 0 auto 0.35rem;
+}
+
+.ancestor-tree-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .ancestor-tree-box a {

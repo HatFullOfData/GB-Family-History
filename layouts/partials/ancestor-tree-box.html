@@ -5,6 +5,13 @@
 
 <div class="ancestor-tree-box{{ if not $person }} is-empty{{ end }}"{{ if not $person }} aria-label="No ancestor link recorded"{{ end }}>
   {{ with $person }}
+    {{ $imgsrc := "images/people/portrait.svg" | relURL }}
+    {{ with .Params.portrait }}
+      {{ $imgsrc = . | relURL }}
+    {{ end }}
+    <a class="ancestor-tree-thumb" href="{{ .RelPermalink }}" aria-label="{{ .Title }}">
+      <img src="{{ $imgsrc }}" alt="{{ .Title }} portrait" loading="lazy">
+    </a>
     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     {{ $birthyear := "????" }}
     {{ with .Params.birth.date }}
