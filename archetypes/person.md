@@ -8,6 +8,8 @@ birth:
   display: ""
   place: ""
 
+living: false
+
 death:
   display: ""
   place: ""

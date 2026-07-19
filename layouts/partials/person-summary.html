@@ -10,13 +10,17 @@
     {{ end }}
   {{ end }}
   {{ $deathyear := "????" }}
-  {{ with .Params.death.date }}
-    {{ $death := printf "%v" . }}
-    {{ if ge (len $death) 4 }}
-      {{ $deathyear = slicestr $death 0 4 }}
-    {{ else }}
-      {{ $deathyear = $death }}
+  {{ if .Params.living }}
+    {{ $deathyear = "present" }}
+  {{ else }}
+    {{ with .Params.death.date }}
+      {{ $death := printf "%v" . }}
+      {{ if ge (len $death) 4 }}
+        {{ $deathyear = slicestr $death 0 4 }}
+      {{ else }}
+        {{ $deathyear = $death }}
+      {{ end }}
     {{ end }}
   {{ end }}
-  <span>( {{ $birthyear }} - {{ $deathyear }})</span>
+  <span>( {{ $birthyear }} - {{ $deathyear }} )</span>
 </li>

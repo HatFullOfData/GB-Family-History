@@ -6,6 +6,8 @@ given_name: "Laura"
 surname: "Graham-Brown"
 portrait: "images/people/LauraGB.png"
 
+living: true
+
 birth:
   date: "1968-11-12"
   display: "12 November 1968"

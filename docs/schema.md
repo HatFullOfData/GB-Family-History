@@ -52,6 +52,8 @@ birth:
   display: "12 November 1968"
   place: "Lusaka, Zambia"
 
+living: true                    # set true for living people; summary will show present
+
 death:
   date: ""                    # ISO optional
   display: ""
