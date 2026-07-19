@@ -1,14 +1,22 @@
 <li>
   <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  {{ $birthyear := "????" }}
   {{ with .Params.birth.date }}
     {{ $birth := printf "%v" . }}
-    <span>
-      (b.
-      {{ if ge (len $birth) 4 }}
-        {{ slicestr $birth 0 4 }}
-      {{ else }}
-        {{ $birth }}
-      {{ end }})
-    </span>
+    {{ if ge (len $birth) 4 }}
+      {{ $birthyear = slicestr $birth 0 4 }}
+    {{ else }}
+      {{ $birthyear = $birth }}
+    {{ end }}
   {{ end }}
+  {{ $deathyear := "????" }}
+  {{ with .Params.death.date }}
+    {{ $death := printf "%v" . }}
+    {{ if ge (len $death) 4 }}
+      {{ $deathyear = slicestr $death 0 4 }}
+    {{ else }}
+      {{ $deathyear = $death }}
+    {{ end }}
+  {{ end }}
+  <span>( {{ $birthyear }} - {{ $deathyear }})</span>
 </li>

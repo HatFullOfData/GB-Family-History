@@ -7,6 +7,7 @@ surname: "Graham-Brown"
 portrait: "images/people/LauraGB.png"
 
 birth:
+  date: "1968-11-12"
   display: "12 November 1968"
   place: "Lusaka, Zambia"
 
