@@ -1,4 +1,13 @@
 <div class="person-summary">
+  {{ $imgsrc = "images/people/portrait.svg" }}
+  {{ with .Params.portrait }}
+    {{ $imgsrc = . | relURL }}
+  {{ end }}
+  {{ with .Params.portrait }}
+    <figure class="person-thumb">
+      <img src="{{ $imgsrc }}" alt="{{ $.Title }} portrait" loading="lazy">
+    </figure>
+  {{ end }}
   <a href="{{ .RelPermalink }}">{{ .Title }}</a>
   {{ $birthyear := "????" }}
   {{ with .Params.birth.date }}

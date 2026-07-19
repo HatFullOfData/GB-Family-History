@@ -109,3 +109,11 @@ footer {
   border-radius: 8px;
   display: block;
 }
+
+.person-thumb img {
+  max-width: 50px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
