@@ -24,7 +24,7 @@
 
       const names = people.map((person) => ({
         element: person,
-        name: person.querySelector('a')?.textContent.trim().toLowerCase() || ''
+        name: (person.dataset.searchName || person.querySelector('a')?.textContent || '').trim().toLowerCase()
       }));
 
       input.addEventListener('input', () => {

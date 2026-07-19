@@ -26,7 +26,7 @@
 {{ end }}
 <section>
   <h2>{{ .title }}</h2>
-  {{ with sort $children "Title" }}
+  {{ with sort $children "Params.birth.date" }}
     <div class="children-list">
     {{ range . }}
       {{ partial "person-summary.html" . }}

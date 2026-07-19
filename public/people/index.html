@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head><script src="/GB-Family-History/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=GB-Family-History/livereload" data-no-instant defer></script>
+  <head><script src="/GB-Family-History/livereload.js?mindelay=10&amp;v=2&amp;port=57313&amp;path=GB-Family-History/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <title>People | GB Family History</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,7 +47,72 @@
         
 
 
-<div class="person-summary">
+<div class="person-summary" data-search-name="Alta Farthing ">
+  
+  
+  
+  <figure class="person-thumb">
+    <img src="/GB-Family-History/images/people/portrait.svg" alt="Alta Farthing portrait" loading="lazy">
+  </figure>
+
+  <a href="/GB-Family-History/people/alta-farthing/">Alta Farthing</a><br/>
+  
+  
+  
+  
+    
+      
+      
+        
+      
+    
+  
+  <span class="extrainfo">( ???? - 1989 )</span>
+  
+</div>
+
+      
+    
+      
+        
+
+
+<div class="person-summary" data-search-name="Bertram Arthur Flint ">
+  
+  
+  
+  <figure class="person-thumb">
+    <img src="/GB-Family-History/images/people/portrait.svg" alt="Bertram Arthur Flint portrait" loading="lazy">
+  </figure>
+
+  <a href="/GB-Family-History/people/bertram-arthur-flint/">Bertram Arthur Flint</a><br/>
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+      
+      
+        
+      
+    
+  
+  <span class="extrainfo">( 1904 - 1977 )</span>
+  
+</div>
+
+      
+    
+      
+        
+
+
+<div class="person-summary" data-search-name="David Kimpton ">
   
   
   
@@ -82,7 +147,7 @@
         
 
 
-<div class="person-summary">
+<div class="person-summary" data-search-name="Elizabeth Annie Kimpton ">
   
   
   
@@ -117,7 +182,7 @@
         
 
 
-<div class="person-summary">
+<div class="person-summary" data-search-name="Frances Mary Carpenter ">
   
   
   
@@ -152,7 +217,7 @@
         
 
 
-<div class="person-summary">
+<div class="person-summary" data-search-name="Frederick David Kimpton Fred">
   
   
   
@@ -187,7 +252,7 @@
         
 
 
-<div class="person-summary">
+<div class="person-summary" data-search-name="George Harry Francis Graham-Brown Harry">
   
   
   
@@ -217,7 +282,7 @@
         
 
 
-<div class="person-summary">
+<div class="person-summary" data-search-name="Joan Sheppard ">
   
   
   
@@ -252,7 +317,42 @@
         
 
 
-<div class="person-summary">
+<div class="person-summary" data-search-name="Joseph Matthew Kimpton Joe">
+  
+  
+  
+  <figure class="person-thumb">
+    <img src="/GB-Family-History/images/people/portrait.svg" alt="Joseph Matthew Kimpton portrait" loading="lazy">
+  </figure>
+
+  <a href="/GB-Family-History/people/joseph-matthew-kimpton/">Joseph Matthew Kimpton</a><br/>
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+      
+      
+        
+      
+    
+  
+  <span class="extrainfo">( 1897 - 1972 )</span>
+  
+</div>
+
+      
+    
+      
+        
+
+
+<div class="person-summary" data-search-name="Laura Graham-Brown ">
   
   
     
@@ -284,7 +384,42 @@
         
 
 
-<div class="person-summary">
+<div class="person-summary" data-search-name="Marion Timberlake ">
+  
+  
+  
+  <figure class="person-thumb">
+    <img src="/GB-Family-History/images/people/portrait.svg" alt="Marion Timberlake portrait" loading="lazy">
+  </figure>
+
+  <a href="/GB-Family-History/people/marion-timberlake/">Marion Timberlake</a><br/>
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+      
+      
+        
+      
+    
+  
+  <span class="extrainfo">( 1902 - 1982 )</span>
+  
+</div>
+
+      
+    
+      
+        
+
+
+<div class="person-summary" data-search-name="Michael Ashley Carpenter Mike">
   
   
   
@@ -314,7 +449,7 @@
         
 
 
-<div class="person-summary">
+<div class="person-summary" data-search-name="Muriel Augusta Turner ">
   
   
   
@@ -357,7 +492,7 @@
 
       const names = people.map((person) => ({
         element: person,
-        name: person.querySelector('a')?.textContent.trim().toLowerCase() || ''
+        name: (person.dataset.searchName || person.querySelector('a')?.textContent || '').trim().toLowerCase()
       }));
 
       input.addEventListener('input', () => {

@@ -1,5 +1,4 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
-  <div>{{ .Content }}</div>
   {{ partial "page-list.html" (dict "pages" .Pages "empty" "No entries yet.") }}
 {{ end }}

@@ -2,100 +2,128 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on GB Family History</title>
-    <link>http://localhost:1313/GB-Family-History/</link>
+    <link>https://hatfullofdata.github.io/GB-Family-History/</link>
     <description>Recent content in Home on GB Family History</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/GB-Family-History/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hatfullofdata.github.io/GB-Family-History/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1901 Census - Brown Family</title>
-      <link>http://localhost:1313/GB-Family-History/sources/1901-census-brown-family/</link>
+      <link>https://hatfullofdata.github.io/GB-Family-History/sources/1901-census-brown-family/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/GB-Family-History/sources/1901-census-brown-family/</guid>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/sources/1901-census-brown-family/</guid>
       <description>A census source used to support family location and household details.</description>
     </item>
     <item>
-      <title>David Kimpton</title>
-      <link>http://localhost:1313/GB-Family-History/people/david-kimpton/</link>
+      <title>Alta Farthing</title>
+      <link>https://hatfullofdata.github.io/GB-Family-History/people/alta-farthing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/GB-Family-History/people/david-kimpton/</guid>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/people/alta-farthing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bertram Arthur Flint</title>
+      <link>https://hatfullofdata.github.io/GB-Family-History/people/bertram-arthur-flint/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/people/bertram-arthur-flint/</guid>
+      <description>Bertram Arthur Flint worked as a carpenter.</description>
+    </item>
+    <item>
+      <title>David Kimpton</title>
+      <link>https://hatfullofdata.github.io/GB-Family-History/people/david-kimpton/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/people/david-kimpton/</guid>
       <description>David Kimpton worked as a blacksmith.</description>
     </item>
     <item>
       <title>Elizabeth Annie Kimpton</title>
-      <link>http://localhost:1313/GB-Family-History/people/elizabeth-annie-kimpton/</link>
+      <link>https://hatfullofdata.github.io/GB-Family-History/people/elizabeth-annie-kimpton/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/GB-Family-History/people/elizabeth-annie-kimpton/</guid>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/people/elizabeth-annie-kimpton/</guid>
       <description>Elizabeth Annie Kimpton, nee Timberlake, worked as a dressmaker.</description>
     </item>
     <item>
       <title>Frances Mary Carpenter</title>
-      <link>http://localhost:1313/GB-Family-History/people/frances-mary-carpenter/</link>
+      <link>https://hatfullofdata.github.io/GB-Family-History/people/frances-mary-carpenter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/GB-Family-History/people/frances-mary-carpenter/</guid>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/people/frances-mary-carpenter/</guid>
       <description>Frances Mary Carpenter (nee Kimpton) worked as a teacher.</description>
     </item>
     <item>
       <title>Frederick David Kimpton</title>
-      <link>http://localhost:1313/GB-Family-History/people/frederick-david-kimpton/</link>
+      <link>https://hatfullofdata.github.io/GB-Family-History/people/frederick-david-kimpton/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/GB-Family-History/people/frederick-david-kimpton/</guid>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/people/frederick-david-kimpton/</guid>
       <description>Frederick David Kimpton, known as Fred, worked as a wireless operator.</description>
     </item>
     <item>
       <title>George Harry Francis Graham-Brown</title>
-      <link>http://localhost:1313/GB-Family-History/people/george-graham-brown/</link>
+      <link>https://hatfullofdata.github.io/GB-Family-History/people/george-graham-brown/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/GB-Family-History/people/george-graham-brown/</guid>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/people/george-graham-brown/</guid>
       <description>George Harry Francis Graham-Brown, known as Harry, worked as an IT security consultant.</description>
     </item>
     <item>
       <title>Joan Sheppard</title>
-      <link>http://localhost:1313/GB-Family-History/people/joan-sheppard/</link>
+      <link>https://hatfullofdata.github.io/GB-Family-History/people/joan-sheppard/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/GB-Family-History/people/joan-sheppard/</guid>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/people/joan-sheppard/</guid>
       <description></description>
     </item>
     <item>
-      <title>Laura Graham-Brown</title>
-      <link>http://localhost:1313/GB-Family-History/people/laura-graham-brown/</link>
+      <title>Joseph Matthew Kimpton</title>
+      <link>https://hatfullofdata.github.io/GB-Family-History/people/joseph-matthew-kimpton/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/GB-Family-History/people/laura-graham-brown/</guid>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/people/joseph-matthew-kimpton/</guid>
+      <description>Joseph Matthew Kimpton was known as Joe.</description>
+    </item>
+    <item>
+      <title>Laura Graham-Brown</title>
+      <link>https://hatfullofdata.github.io/GB-Family-History/people/laura-graham-brown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/people/laura-graham-brown/</guid>
       <description>Laura Graham-Brown was born in Lusaka, Zambia.</description>
     </item>
     <item>
       <title>Leeds</title>
-      <link>http://localhost:1313/GB-Family-History/locations/leeds/</link>
+      <link>https://hatfullofdata.github.io/GB-Family-History/locations/leeds/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/GB-Family-History/locations/leeds/</guid>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/locations/leeds/</guid>
       <description>A major Yorkshire city that appears repeatedly in this family history.</description>
     </item>
     <item>
-      <title>Michael Ashley Carpenter</title>
-      <link>http://localhost:1313/GB-Family-History/people/michael-ashley-carpenter/</link>
+      <title>Marion Timberlake</title>
+      <link>https://hatfullofdata.github.io/GB-Family-History/people/marion-timberlake/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/GB-Family-History/people/michael-ashley-carpenter/</guid>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/people/marion-timberlake/</guid>
+      <description>Marion Timberlake worked as a teacher.</description>
+    </item>
+    <item>
+      <title>Michael Ashley Carpenter</title>
+      <link>https://hatfullofdata.github.io/GB-Family-History/people/michael-ashley-carpenter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/people/michael-ashley-carpenter/</guid>
       <description>A carpernter by trade and by name, a teacher for his career and a craftsman</description>
     </item>
     <item>
       <title>Move from Leeds to York</title>
-      <link>http://localhost:1313/GB-Family-History/stories/move-from-leeds-to-york/</link>
+      <link>https://hatfullofdata.github.io/GB-Family-History/stories/move-from-leeds-to-york/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/GB-Family-History/stories/move-from-leeds-to-york/</guid>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/stories/move-from-leeds-to-york/</guid>
       <description>A family move from Leeds to York, likely driven by work.</description>
     </item>
     <item>
       <title>Muriel Augusta Turner</title>
-      <link>http://localhost:1313/GB-Family-History/people/muriel-augusta-turner/</link>
+      <link>https://hatfullofdata.github.io/GB-Family-History/people/muriel-augusta-turner/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/GB-Family-History/people/muriel-augusta-turner/</guid>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/people/muriel-augusta-turner/</guid>
       <description></description>
     </item>
     <item>
       <title>People Directory</title>
-      <link>http://localhost:1313/GB-Family-History/people-directory/</link>
+      <link>https://hatfullofdata.github.io/GB-Family-History/people-directory/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/GB-Family-History/people-directory/</guid>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/people-directory/</guid>
       <description>A registry of people records with IDs, names, and birth years.</description>
     </item>
   </channel>

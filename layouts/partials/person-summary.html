@@ -8,7 +8,7 @@
     {{ $extranote = . }}
   {{ end }}
 {{ end }}
-<div class="person-summary">
+<div class="person-summary" data-search-name="{{ $person.Title }} {{ with $person.Params.known_as }}{{ . }}{{ end }}">
   {{ $imgsrc := "images/people/portrait.svg" | relURL }}
   {{ with $person.Params.portrait }}
     {{ $imgsrc = . | relURL }}

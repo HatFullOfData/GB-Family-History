@@ -2,72 +2,100 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>People on GB Family History</title>
-    <link>http://localhost:1313/GB-Family-History/people/</link>
+    <link>http://localhost:57313/GB-Family-History/people/</link>
     <description>Recent content in People on GB Family History</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/GB-Family-History/people/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:57313/GB-Family-History/people/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Alta Farthing</title>
+      <link>http://localhost:57313/GB-Family-History/people/alta-farthing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:57313/GB-Family-History/people/alta-farthing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bertram Arthur Flint</title>
+      <link>http://localhost:57313/GB-Family-History/people/bertram-arthur-flint/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:57313/GB-Family-History/people/bertram-arthur-flint/</guid>
+      <description>Bertram Arthur Flint worked as a carpenter.</description>
+    </item>
     <item>
       <title>David Kimpton</title>
-      <link>http://localhost:1313/GB-Family-History/people/david-kimpton/</link>
+      <link>http://localhost:57313/GB-Family-History/people/david-kimpton/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/GB-Family-History/people/david-kimpton/</guid>
+      <guid>http://localhost:57313/GB-Family-History/people/david-kimpton/</guid>
       <description>David Kimpton worked as a blacksmith.</description>
     </item>
     <item>
       <title>Elizabeth Annie Kimpton</title>
-      <link>http://localhost:1313/GB-Family-History/people/elizabeth-annie-kimpton/</link>
+      <link>http://localhost:57313/GB-Family-History/people/elizabeth-annie-kimpton/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/GB-Family-History/people/elizabeth-annie-kimpton/</guid>
+      <guid>http://localhost:57313/GB-Family-History/people/elizabeth-annie-kimpton/</guid>
       <description>Elizabeth Annie Kimpton, nee Timberlake, worked as a dressmaker.</description>
     </item>
     <item>
       <title>Frances Mary Carpenter</title>
-      <link>http://localhost:1313/GB-Family-History/people/frances-mary-carpenter/</link>
+      <link>http://localhost:57313/GB-Family-History/people/frances-mary-carpenter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/GB-Family-History/people/frances-mary-carpenter/</guid>
+      <guid>http://localhost:57313/GB-Family-History/people/frances-mary-carpenter/</guid>
       <description>Frances Mary Carpenter (nee Kimpton) worked as a teacher.</description>
     </item>
     <item>
       <title>Frederick David Kimpton</title>
-      <link>http://localhost:1313/GB-Family-History/people/frederick-david-kimpton/</link>
+      <link>http://localhost:57313/GB-Family-History/people/frederick-david-kimpton/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/GB-Family-History/people/frederick-david-kimpton/</guid>
+      <guid>http://localhost:57313/GB-Family-History/people/frederick-david-kimpton/</guid>
       <description>Frederick David Kimpton, known as Fred, worked as a wireless operator.</description>
     </item>
     <item>
       <title>George Harry Francis Graham-Brown</title>
-      <link>http://localhost:1313/GB-Family-History/people/george-graham-brown/</link>
+      <link>http://localhost:57313/GB-Family-History/people/george-graham-brown/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/GB-Family-History/people/george-graham-brown/</guid>
+      <guid>http://localhost:57313/GB-Family-History/people/george-graham-brown/</guid>
       <description>George Harry Francis Graham-Brown, known as Harry, worked as an IT security consultant.</description>
     </item>
     <item>
       <title>Joan Sheppard</title>
-      <link>http://localhost:1313/GB-Family-History/people/joan-sheppard/</link>
+      <link>http://localhost:57313/GB-Family-History/people/joan-sheppard/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/GB-Family-History/people/joan-sheppard/</guid>
+      <guid>http://localhost:57313/GB-Family-History/people/joan-sheppard/</guid>
       <description></description>
     </item>
     <item>
-      <title>Laura Graham-Brown</title>
-      <link>http://localhost:1313/GB-Family-History/people/laura-graham-brown/</link>
+      <title>Joseph Matthew Kimpton</title>
+      <link>http://localhost:57313/GB-Family-History/people/joseph-matthew-kimpton/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/GB-Family-History/people/laura-graham-brown/</guid>
+      <guid>http://localhost:57313/GB-Family-History/people/joseph-matthew-kimpton/</guid>
+      <description>Joseph Matthew Kimpton was known as Joe.</description>
+    </item>
+    <item>
+      <title>Laura Graham-Brown</title>
+      <link>http://localhost:57313/GB-Family-History/people/laura-graham-brown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:57313/GB-Family-History/people/laura-graham-brown/</guid>
       <description>Laura Graham-Brown was born in Lusaka, Zambia.</description>
     </item>
     <item>
-      <title>Michael Ashley Carpenter</title>
-      <link>http://localhost:1313/GB-Family-History/people/michael-ashley-carpenter/</link>
+      <title>Marion Timberlake</title>
+      <link>http://localhost:57313/GB-Family-History/people/marion-timberlake/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/GB-Family-History/people/michael-ashley-carpenter/</guid>
+      <guid>http://localhost:57313/GB-Family-History/people/marion-timberlake/</guid>
+      <description>Marion Timberlake worked as a teacher.</description>
+    </item>
+    <item>
+      <title>Michael Ashley Carpenter</title>
+      <link>http://localhost:57313/GB-Family-History/people/michael-ashley-carpenter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:57313/GB-Family-History/people/michael-ashley-carpenter/</guid>
       <description>A carpernter by trade and by name, a teacher for his career and a craftsman</description>
     </item>
     <item>
       <title>Muriel Augusta Turner</title>
-      <link>http://localhost:1313/GB-Family-History/people/muriel-augusta-turner/</link>
+      <link>http://localhost:57313/GB-Family-History/people/muriel-augusta-turner/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/GB-Family-History/people/muriel-augusta-turner/</guid>
+      <guid>http://localhost:57313/GB-Family-History/people/muriel-augusta-turner/</guid>
       <description></description>
     </item>
   </channel>
