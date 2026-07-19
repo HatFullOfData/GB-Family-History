@@ -1,5 +1,5 @@
 <div class="person-summary">
-  {{ $imgsrc := "../images/people/portrait.svg" }}
+  {{ $imgsrc := "/images/people/portrait.svg" }}
   {{ with .Params.portrait }}
     {{ $imgsrc = . | relURL }}
   {{ end }}
