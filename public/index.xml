@@ -2,100 +2,100 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on GB Family History</title>
-    <link>https://hatfullofdata.github.io/GB-Family-History/</link>
+    <link>http://localhost:1313/GB-Family-History/</link>
     <description>Recent content in Home on GB Family History</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="https://hatfullofdata.github.io/GB-Family-History/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/GB-Family-History/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1901 Census - Brown Family</title>
-      <link>https://hatfullofdata.github.io/GB-Family-History/sources/1901-census-brown-family/</link>
+      <link>http://localhost:1313/GB-Family-History/sources/1901-census-brown-family/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://hatfullofdata.github.io/GB-Family-History/sources/1901-census-brown-family/</guid>
+      <guid>http://localhost:1313/GB-Family-History/sources/1901-census-brown-family/</guid>
       <description>A census source used to support family location and household details.</description>
     </item>
     <item>
       <title>David Kimpton</title>
-      <link>https://hatfullofdata.github.io/GB-Family-History/people/david-kimpton/</link>
+      <link>http://localhost:1313/GB-Family-History/people/david-kimpton/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://hatfullofdata.github.io/GB-Family-History/people/david-kimpton/</guid>
-      <description>David Kimpton lived from 1871 to 1913 and worked as a blacksmith.</description>
+      <guid>http://localhost:1313/GB-Family-History/people/david-kimpton/</guid>
+      <description>David Kimpton worked as a blacksmith.</description>
     </item>
     <item>
       <title>Elizabeth Annie Kimpton</title>
-      <link>https://hatfullofdata.github.io/GB-Family-History/people/elizabeth-annie-kimpton/</link>
+      <link>http://localhost:1313/GB-Family-History/people/elizabeth-annie-kimpton/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://hatfullofdata.github.io/GB-Family-History/people/elizabeth-annie-kimpton/</guid>
-      <description>Elizabeth Annie Kimpton, nee Timberlake, lived from 1871 to 1938 and worked as a dressmaker.</description>
+      <guid>http://localhost:1313/GB-Family-History/people/elizabeth-annie-kimpton/</guid>
+      <description>Elizabeth Annie Kimpton, nee Timberlake, worked as a dressmaker.</description>
     </item>
     <item>
       <title>Frances Mary Carpenter</title>
-      <link>https://hatfullofdata.github.io/GB-Family-History/people/frances-mary-carpenter/</link>
+      <link>http://localhost:1313/GB-Family-History/people/frances-mary-carpenter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://hatfullofdata.github.io/GB-Family-History/people/frances-mary-carpenter/</guid>
-      <description>Frances Mary Carpenter (nee Kimpton) was born on 12 October 1943.</description>
+      <guid>http://localhost:1313/GB-Family-History/people/frances-mary-carpenter/</guid>
+      <description>Frances Mary Carpenter (nee Kimpton) worked as a teacher.</description>
     </item>
     <item>
       <title>Frederick David Kimpton</title>
-      <link>https://hatfullofdata.github.io/GB-Family-History/people/frederick-david-kimpton/</link>
+      <link>http://localhost:1313/GB-Family-History/people/frederick-david-kimpton/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://hatfullofdata.github.io/GB-Family-History/people/frederick-david-kimpton/</guid>
-      <description>Frederick David Kimpton, known as Fred, lived from 1905 to 1984.</description>
+      <guid>http://localhost:1313/GB-Family-History/people/frederick-david-kimpton/</guid>
+      <description>Frederick David Kimpton, known as Fred, worked as a wireless operator.</description>
     </item>
     <item>
       <title>George Harry Francis Graham-Brown</title>
-      <link>https://hatfullofdata.github.io/GB-Family-History/people/george-graham-brown/</link>
+      <link>http://localhost:1313/GB-Family-History/people/george-graham-brown/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://hatfullofdata.github.io/GB-Family-History/people/george-graham-brown/</guid>
-      <description>George Harry Francis Graham-Brown, known as Harry.</description>
+      <guid>http://localhost:1313/GB-Family-History/people/george-graham-brown/</guid>
+      <description>George Harry Francis Graham-Brown, known as Harry, worked as an IT security consultant.</description>
     </item>
     <item>
       <title>Joan Sheppard</title>
-      <link>https://hatfullofdata.github.io/GB-Family-History/people/joan-sheppard/</link>
+      <link>http://localhost:1313/GB-Family-History/people/joan-sheppard/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://hatfullofdata.github.io/GB-Family-History/people/joan-sheppard/</guid>
-      <description>Joan Sheppard lived from 1925 to 1987 and was married to Frederick David Kimpton.</description>
+      <guid>http://localhost:1313/GB-Family-History/people/joan-sheppard/</guid>
+      <description></description>
     </item>
     <item>
       <title>Laura Graham-Brown</title>
-      <link>https://hatfullofdata.github.io/GB-Family-History/people/laura-graham-brown/</link>
+      <link>http://localhost:1313/GB-Family-History/people/laura-graham-brown/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://hatfullofdata.github.io/GB-Family-History/people/laura-graham-brown/</guid>
+      <guid>http://localhost:1313/GB-Family-History/people/laura-graham-brown/</guid>
       <description>Laura Graham-Brown was born in Lusaka, Zambia.</description>
     </item>
     <item>
       <title>Leeds</title>
-      <link>https://hatfullofdata.github.io/GB-Family-History/locations/leeds/</link>
+      <link>http://localhost:1313/GB-Family-History/locations/leeds/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://hatfullofdata.github.io/GB-Family-History/locations/leeds/</guid>
+      <guid>http://localhost:1313/GB-Family-History/locations/leeds/</guid>
       <description>A major Yorkshire city that appears repeatedly in this family history.</description>
     </item>
     <item>
       <title>Michael Ashley Carpenter</title>
-      <link>https://hatfullofdata.github.io/GB-Family-History/people/michael-ashley-carpenter/</link>
+      <link>http://localhost:1313/GB-Family-History/people/michael-ashley-carpenter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://hatfullofdata.github.io/GB-Family-History/people/michael-ashley-carpenter/</guid>
+      <guid>http://localhost:1313/GB-Family-History/people/michael-ashley-carpenter/</guid>
       <description>A carpernter by trade and by name, a teacher for his career and a craftsman</description>
     </item>
     <item>
       <title>Move from Leeds to York</title>
-      <link>https://hatfullofdata.github.io/GB-Family-History/stories/move-from-leeds-to-york/</link>
+      <link>http://localhost:1313/GB-Family-History/stories/move-from-leeds-to-york/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://hatfullofdata.github.io/GB-Family-History/stories/move-from-leeds-to-york/</guid>
+      <guid>http://localhost:1313/GB-Family-History/stories/move-from-leeds-to-york/</guid>
       <description>A family move from Leeds to York, likely driven by work.</description>
     </item>
     <item>
       <title>Muriel Augusta Turner</title>
-      <link>https://hatfullofdata.github.io/GB-Family-History/people/muriel-augusta-turner/</link>
+      <link>http://localhost:1313/GB-Family-History/people/muriel-augusta-turner/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://hatfullofdata.github.io/GB-Family-History/people/muriel-augusta-turner/</guid>
-      <description>Muriel Augusta Turner died in 1949 and was married to Frederick David Kimpton.</description>
+      <guid>http://localhost:1313/GB-Family-History/people/muriel-augusta-turner/</guid>
+      <description></description>
     </item>
     <item>
       <title>People Directory</title>
-      <link>https://hatfullofdata.github.io/GB-Family-History/people-directory/</link>
+      <link>http://localhost:1313/GB-Family-History/people-directory/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://hatfullofdata.github.io/GB-Family-History/people-directory/</guid>
+      <guid>http://localhost:1313/GB-Family-History/people-directory/</guid>
       <description>A registry of people records with IDs, names, and birth years.</description>
     </item>
   </channel>

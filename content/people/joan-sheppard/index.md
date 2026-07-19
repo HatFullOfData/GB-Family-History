@@ -1,7 +1,6 @@
 ---
 id: "P-SHE-1925-01"
 title: "Joan Sheppard"
-summary: "Joan Sheppard lived from 1925 to 1987 and was married to Frederick David Kimpton."
 
 given_name: "Joan"
 surname: "Sheppard"
@@ -23,4 +22,3 @@ spouses:
     person: "/people/frederick-david-kimpton/"
     status: "married"
 ---
-Joan Sheppard lived from 1925 to 1987 and was married to Frederick David Kimpton.

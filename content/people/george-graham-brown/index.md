@@ -1,7 +1,7 @@
 ---
 id: "P-GRB-19631125-01"
 title: "George Harry Francis Graham-Brown"
-summary: "George Harry Francis Graham-Brown, known as Harry."
+summary: "George Harry Francis Graham-Brown, known as Harry, worked as an IT security consultant."
 given_name: "George"
 middle_names: "Harry Francis"
 surname: "Graham-Brown"
@@ -24,4 +24,4 @@ spouses:
       display: "9 April 1994"
       place: "Stowe School, Buckingham"
 ---
-George Harry Francis Graham-Brown is known as Harry.
+

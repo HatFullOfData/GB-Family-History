@@ -1,7 +1,7 @@
 ---
 id: "P-KIM-1905-01"
 title: "Frederick David Kimpton"
-summary: "Frederick David Kimpton, known as Fred, lived from 1905 to 1984."
+summary: "Frederick David Kimpton, known as Fred, worked as a wireless operator."
 
 given_name: "Frederick"
 middle_names: "David"
@@ -31,4 +31,3 @@ spouses:
     person: "/people/joan-sheppard/"
     status: "married"
 ---
-Frederick David Kimpton was known as Fred.

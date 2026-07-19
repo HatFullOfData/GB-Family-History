@@ -1,7 +1,7 @@
 ---
 id: "P-KIM-1871-02"
 title: "Elizabeth Annie Kimpton"
-summary: "Elizabeth Annie Kimpton, nee Timberlake, lived from 1871 to 1938 and worked as a dressmaker."
+summary: "Elizabeth Annie Kimpton, nee Timberlake, worked as a dressmaker."
 
 given_name: "Elizabeth"
 middle_names: "Annie"
@@ -28,4 +28,3 @@ spouses:
       date: "1897"
       display: "1897"
 ---
-Elizabeth Annie Kimpton, nee Timberlake, lived from 1871 to 1938 and worked as a dressmaker.

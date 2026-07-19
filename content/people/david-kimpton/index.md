@@ -1,7 +1,7 @@
 ---
 id: "P-KIM-1871-01"
 title: "David Kimpton"
-summary: "David Kimpton lived from 1871 to 1913 and worked as a blacksmith."
+summary: "David Kimpton worked as a blacksmith."
 
 given_name: "David"
 surname: "Kimpton"
@@ -26,4 +26,3 @@ spouses:
       date: "1897"
       display: "1897"
 ---
-David Kimpton lived from 1871 to 1913 and worked as a blacksmith.

@@ -1,7 +1,7 @@
 ---
 id: "P-CAR-19431012-01"
 title: "Frances Mary Carpenter"
-summary: "Frances Mary Carpenter (nee Kimpton) was born on 12 October 1943."
+summary: "Frances Mary Carpenter (nee Kimpton) worked as a teacher."
 
 given_name: "Frances"
 middle_names: "Mary"
@@ -32,4 +32,4 @@ spouses:
       date: "1963-07-13"
       display: "13 July 1963"
 ---
-Frances Mary Carpenter appears in the family history archive, with a recorded birth of 12 October 1943.
+
