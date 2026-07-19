@@ -35,7 +35,7 @@
   {{ with $spouses }}
 
     {{ range . }}
-      {{ partial "people-summary.html" (dict "page" .page "display" .display) }}
+      {{ partial "person-summary.html" .page }}
     {{ end }}
 
   {{ else }}
