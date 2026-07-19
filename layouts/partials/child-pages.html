@@ -1,0 +1,29 @@
+{{ $page := . }}
+{{ $children := slice }}
+{{ $pageId := $page.Params.id }}
+
+{{ range where site.RegularPages "Section" "people" }}
+  {{ $candidate := . }}
+  {{ if ne $candidate.RelPermalink $page.RelPermalink }}
+    {{ $found := false }}
+    {{ range $candidate.Params.parents }}
+      {{ if reflect.IsMap . }}
+        {{ if and (not $found) (eq (index . "person_id") $pageId) }}
+          {{ $found = true }}
+        {{ end }}
+        {{ if and (not $found) (eq (index . "person") $page.RelPermalink) }}
+          {{ $found = true }}
+        {{ end }}
+      {{ else }}
+        {{ if and (not $found) (eq . $page.RelPermalink) }}
+          {{ $found = true }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    {{ if $found }}
+      {{ $children = $children | append $candidate }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ return (sort $children "Params.birth.date") }}

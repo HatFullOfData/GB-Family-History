@@ -21,10 +21,35 @@
         <div class="person-biography">{{ .Content }}</div>
       </div>
     </div>
-    {{ partial "ancestor-tree.html" . }}
-    {{ partial "relationship-list.html" (dict "title" "Parents" "values" .Params.parents "empty" "No parent links recorded." "render" "person-summary.html") }}
-    {{ partial "spouse-list.html" (dict "page" .) }}
-    {{ partial "children-list.html" (dict "page" . "title" "Children" "empty" "No child links recorded.") }}
-    {{ partial "backlink-list.html" (dict "page" . "section" "stories" "param" "people" "title" "Stories" "empty" "No related stories yet.") }}
+    <section class="person-tabs">
+      <input type="radio" id="person-tab-ancestors" name="person-tabs" checked>
+      <input type="radio" id="person-tab-descendants" name="person-tabs">
+      <input type="radio" id="person-tab-relations" name="person-tabs">
+      <input type="radio" id="person-tab-stories" name="person-tabs">
+
+      <div class="person-tab-list" aria-label="Person page sections">
+        <label for="person-tab-ancestors">Ancestor Tree</label>
+        <label for="person-tab-descendants">Descendants</label>
+        <label for="person-tab-relations">Relations</label>
+        <label for="person-tab-stories">Stories</label>
+      </div>
+
+      <div class="person-tab-panels">
+        <div class="person-tab-panel person-tab-panel-ancestors">
+          {{ partial "ancestor-tree.html" . }}
+        </div>
+        <div class="person-tab-panel person-tab-panel-descendants">
+          {{ partial "descendant-tree.html" . }}
+        </div>
+        <div class="person-tab-panel person-tab-panel-relations">
+          {{ partial "relationship-list.html" (dict "title" "Parents" "values" .Params.parents "empty" "No parent links recorded." "render" "person-summary.html") }}
+          {{ partial "spouse-list.html" (dict "page" .) }}
+          {{ partial "children-list.html" (dict "page" . "title" "Children" "empty" "No child links recorded.") }}
+        </div>
+        <div class="person-tab-panel person-tab-panel-stories">
+          {{ partial "backlink-list.html" (dict "page" . "section" "stories" "param" "people" "title" "Stories" "empty" "No related stories yet.") }}
+        </div>
+      </div>
+    </section>
   </article>
 {{ end }}

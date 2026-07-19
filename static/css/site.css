@@ -183,6 +183,133 @@ footer {
   margin-top: 1.5rem;
 }
 
+.person-tabs > input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+
+.person-tab-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.person-tab-list label {
+  display: inline-block;
+  margin-bottom: -1px;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid transparent;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.person-tab-list label:hover {
+  background: #f7f7f7;
+}
+
+.person-tab-panel {
+  display: none;
+}
+
+#person-tab-ancestors:checked ~ .person-tab-list label[for="person-tab-ancestors"],
+#person-tab-descendants:checked ~ .person-tab-list label[for="person-tab-descendants"],
+#person-tab-relations:checked ~ .person-tab-list label[for="person-tab-relations"],
+#person-tab-stories:checked ~ .person-tab-list label[for="person-tab-stories"] {
+  border-color: #ddd #ddd #fff;
+  background: #fff;
+  color: #4a148c;
+}
+
+#person-tab-ancestors:checked ~ .person-tab-panels .person-tab-panel-ancestors,
+#person-tab-descendants:checked ~ .person-tab-panels .person-tab-panel-descendants,
+#person-tab-relations:checked ~ .person-tab-panels .person-tab-panel-relations,
+#person-tab-stories:checked ~ .person-tab-panels .person-tab-panel-stories {
+  display: block;
+}
+
+.person-tab-panel > section:first-child {
+  margin-top: 0;
+}
+
+.descendant-tree {
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+}
+
+.descendant-tree-chart {
+  min-width: 48rem;
+}
+
+.descendant-tree-root {
+  display: grid;
+  grid-template-columns: minmax(10rem, 14rem);
+  justify-content: center;
+}
+
+.descendant-tree-row,
+.descendant-grandchild-groups {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.descendant-tree-row-grandchildren {
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+}
+
+.descendant-tree-person {
+  min-width: 0;
+}
+
+.descendant-tree-connectors {
+  position: relative;
+  display: grid;
+  height: 1.4rem;
+  --descendant-count: 1;
+}
+
+.descendant-tree-connectors span {
+  position: relative;
+  display: block;
+  height: 100%;
+}
+
+.descendant-tree-connectors::before {
+  content: "";
+  position: absolute;
+  top: 0.7rem;
+  left: calc(50% / var(--descendant-count));
+  right: calc(50% / var(--descendant-count));
+  border-top: 1px solid #bbb;
+}
+
+.descendant-tree-connectors::after,
+.descendant-tree-connectors span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  border-left: 1px solid #bbb;
+}
+
+.descendant-tree-connectors::after {
+  top: 0;
+  height: 0.7rem;
+}
+
+.descendant-tree-connectors span::after {
+  top: 0.7rem;
+  bottom: 0;
+}
+
+.descendant-grandchild-group.has-no-grandchildren {
+  min-height: 1.4rem;
+}
+
 .ancestor-tree {
   overflow-x: auto;
   padding-bottom: 0.25rem;
@@ -240,7 +367,7 @@ footer {
   border-radius: 50%;
 }
 
-.ancestor-tree-box a {
+.ancestor-tree-name {
   display: block;
   font-weight: 700;
 }
@@ -250,6 +377,14 @@ footer {
   margin-top: 0.25rem;
   color: #777;
   font-size: 0.8rem;
+}
+
+.ancestor-tree-note {
+  line-height: 1.25;
+}
+
+.ancestor-tree-note a {
+  display: inline;
 }
 
 .ancestor-tree-box.is-empty {

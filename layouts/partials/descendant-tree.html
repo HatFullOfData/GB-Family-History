@@ -1,0 +1,46 @@
+{{ $person := . }}
+{{ $children := partial "child-pages.html" $person }}
+
+<section class="descendant-tree" aria-labelledby="descendant-tree-heading">
+  <h2 id="descendant-tree-heading">Descendant tree</h2>
+  {{ with $children }}
+    <div class="descendant-tree-chart">
+      <div class="descendant-tree-root">
+        {{ partial "ancestor-tree-box.html" (dict "person" $person) }}
+      </div>
+      <div class="descendant-tree-connectors descendant-tree-connectors-root" style="--descendant-count: {{ len . }}; grid-template-columns: repeat({{ len . }}, minmax(10rem, 1fr));" aria-hidden="true">
+        {{ range . }}<span></span>{{ end }}
+      </div>
+      <div class="descendant-tree-row descendant-tree-row-children" style="grid-template-columns: repeat({{ len . }}, minmax(10rem, 1fr));">
+        {{ range . }}
+          {{ $otherParent := partial "other-parent.html" (dict "child" . "knownParent" $person) }}
+          <div class="descendant-tree-person">
+            {{ partial "ancestor-tree-box.html" (dict "person" . "otherParent" $otherParent) }}
+          </div>
+        {{ end }}
+      </div>
+      <div class="descendant-grandchild-groups" style="grid-template-columns: repeat({{ len . }}, minmax(10rem, 1fr));">
+        {{ range $child := . }}
+          {{ $grandchildren := partial "child-pages.html" $child }}
+          <div class="descendant-grandchild-group{{ if not $grandchildren }} has-no-grandchildren{{ end }}">
+            {{ with $grandchildren }}
+              <div class="descendant-tree-connectors descendant-tree-connectors-grandchildren" style="--descendant-count: {{ len . }}; grid-template-columns: repeat({{ len . }}, minmax(8rem, 1fr));" aria-hidden="true">
+                {{ range . }}<span></span>{{ end }}
+              </div>
+              <div class="descendant-tree-row descendant-tree-row-grandchildren">
+                {{ range . }}
+                  {{ $otherParent := partial "other-parent.html" (dict "child" . "knownParent" $child) }}
+                  <div class="descendant-tree-person">
+                    {{ partial "ancestor-tree-box.html" (dict "person" . "otherParent" $otherParent) }}
+                  </div>
+                {{ end }}
+              </div>
+            {{ end }}
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  {{ else }}
+    <p>No child links recorded.</p>
+  {{ end }}
+</section>

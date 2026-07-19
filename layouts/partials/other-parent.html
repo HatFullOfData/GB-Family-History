@@ -1,0 +1,17 @@
+{{ $child := .child }}
+{{ $knownParent := .knownParent }}
+{{ $otherParent := false }}
+{{ $knownParentId := $knownParent.Params.id }}
+
+{{ range $child.Params.parents }}
+  {{ if not $otherParent }}
+    {{ $candidate := partial "person-page-from-link.html" . }}
+    {{ with $candidate }}
+      {{ if and (ne .RelPermalink $knownParent.RelPermalink) (ne .Params.id $knownParentId) }}
+        {{ $otherParent = . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ return $otherParent }}
