@@ -1,4 +1,14 @@
 <li>
   <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-  {{ with .Params.birth.display }}<span> (b. {{ . }})</span>{{ end }}
+  {{ with .Params.birth.date }}
+    {{ $birth := printf "%v" . }}
+    <span>
+      (b.
+      {{ if ge (len $birth) 4 }}
+        {{ slicestr $birth 0 4 }}
+      {{ else }}
+        {{ $birth }}
+      {{ end }})
+    </span>
+  {{ end }}
 </li>
