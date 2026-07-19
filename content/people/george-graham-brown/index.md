@@ -7,13 +7,12 @@ middle_names: "Harry Francis"
 surname: "Graham-Brown"
 known_as: "Harry"
 
+living: true
+
 birth:
   date: "1963-11-25"
   display: "25 November 1963"
   place: "Darlington, England"
-
-death:
-  display: ""
 
 parents: []
 spouses:

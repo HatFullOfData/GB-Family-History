@@ -3,6 +3,8 @@ id: "P-CAR-19400518-01"
 title: "Michael Ashley Carpenter"
 summary: "A carpernter by trade and by name, a teacher for his career and a craftsman"
 
+living: true
+
 given_name: "Michael"
 middle_names: "Ashley"
 surname: "Carpenter"

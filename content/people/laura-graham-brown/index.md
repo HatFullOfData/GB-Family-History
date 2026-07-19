@@ -13,9 +13,6 @@ birth:
   display: "12 November 1968"
   place: "Lusaka, Zambia"
 
-death:
-  display: ""
-
 parents:
   - person_id: "P-CAR-19400518-01"
     person: "/people/michael-ashley-carpenter/"
