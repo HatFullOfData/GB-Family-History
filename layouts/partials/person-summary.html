@@ -1,16 +1,26 @@
+{{ $person := . }}
+{{ $extranote := "" }}
+{{ if reflect.IsMap . }}
+  {{ with index . "page" }}
+    {{ $person = . }}
+  {{ end }}
+  {{ with index . "extranote" }}
+    {{ $extranote = . }}
+  {{ end }}
+{{ end }}
 <div class="person-summary">
   {{ $imgsrc := "images/people/portrait.svg" | relURL }}
-  {{ with .Params.portrait }}
+  {{ with $person.Params.portrait }}
     {{ $imgsrc = . | relURL }}
   {{ end }}
   
   <figure class="person-thumb">
-    <img src="{{ $imgsrc }}" alt="{{ $.Title }} portrait" loading="lazy">
+    <img src="{{ $imgsrc }}" alt="{{ $person.Title }} portrait" loading="lazy">
   </figure>
 
-  <a href="{{ .RelPermalink }}">{{ .Title }}</a><br/>
+  <a href="{{ $person.RelPermalink }}">{{ $person.Title }}</a><br/>
   {{ $birthyear := "????" }}
-  {{ with .Params.birth.date }}
+  {{ with $person.Params.birth.date }}
     {{ $birth := printf "%v" . }}
     {{ if ge (len $birth) 4 }}
       {{ $birthyear = slicestr $birth 0 4 }}
@@ -19,10 +29,10 @@
     {{ end }}
   {{ end }}
   {{ $deathyear := "????" }}
-  {{ if .Params.living }}
+  {{ if $person.Params.living }}
     {{ $deathyear = "present" }}
   {{ else }}
-    {{ with .Params.death.date }}
+    {{ with $person.Params.death.date }}
       {{ $death := printf "%v" . }}
       {{ if ge (len $death) 4 }}
         {{ $deathyear = slicestr $death 0 4 }}
@@ -32,4 +42,7 @@
     {{ end }}
   {{ end }}
   <span class="extrainfo">( {{ $birthyear }} - {{ $deathyear }} )</span>
+  {{ with $extranote }}
+    <p class="extrainfo">{{ . }}</p>
+  {{ end }}
 </div>

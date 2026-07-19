@@ -4,10 +4,28 @@
   {{ $entry := . }}
   {{ $target := false }}
   {{ $display := "" }}
+  {{ $marriageYear := "" }}
+  {{ $marriagePlace := "" }}
 
   {{ if reflect.IsMap $entry }}
     {{ with index $entry "display" }}
       {{ $display = . }}
+    {{ end }}
+
+    {{ with index $entry "marriage" }}
+      {{ if reflect.IsMap . }}
+        {{ with index . "date" }}
+          {{ $marriageDate := printf "%v" . }}
+          {{ if ge (len $marriageDate) 4 }}
+            {{ $marriageYear = slicestr $marriageDate 0 4 }}
+          {{ else }}
+            {{ $marriageYear = $marriageDate }}
+          {{ end }}
+        {{ end }}
+        {{ with index . "place" }}
+          {{ $marriagePlace = . }}
+        {{ end }}
+      {{ end }}
     {{ end }}
 
     {{ with index $entry "person_id" }}
@@ -27,7 +45,7 @@
   {{ end }}
 
   {{ with $target }}
-    {{ $spouses = $spouses | append (dict "page" . "display" $display) }}
+    {{ $spouses = $spouses | append (dict "page" . "display" $display "marriageYear" $marriageYear "marriagePlace" $marriagePlace) }}
   {{ end }}
 {{ end }}
 <section>
@@ -35,7 +53,15 @@
   {{ with $spouses }}
     <div class="spouse-list">
       {{ range . }}
-        {{ partial "person-summary.html" .page }}
+        {{ $extranote := "" }}
+        {{ if or .marriageYear .marriagePlace }}
+          {{ $extranote = printf "m. %s%s%s" .marriageYear (cond (and .marriageYear .marriagePlace) ", " "") .marriagePlace }}
+        {{ else }}
+          {{ with .display }}
+            {{ $extranote = . }}
+          {{ end }}
+        {{ end }}
+        {{ partial "person-summary.html" (dict "page" .page "extranote" $extranote) }}
       {{ end }}
     </div>
   {{ else }}
