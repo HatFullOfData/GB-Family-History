@@ -10,7 +10,7 @@ maiden_name: "Kimpton"
 known_as: ""
 
 birth:
-  date: "1943-10-12"
+  date: "1942-10-12"
   display: "12 October 1942"
   place: ""
 
