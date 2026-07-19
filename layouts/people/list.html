@@ -1,7 +1,48 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
+  <div class="people-heading">
+    <h1>{{ .Title }}</h1>
+    <input id="people-search-input" type="search" autocomplete="off" placeholder="Search by name" aria-label="Search by name">
+  </div>
   <div>
     {{ .Content }}
   </div>
-  {{ partial "page-list.html" (dict "pages" .Pages "empty" "No entries yet.") }}
+  <section class="people-search">
+    <p class="people-search-status" aria-live="polite"></p>
+    <div id="people-search-results">
+      {{ partial "page-list.html" (dict "pages" .Pages "empty" "No entries yet.") }}
+    </div>
+  </section>
+  <script>
+    (() => {
+      const input = document.querySelector('#people-search-input');
+      const status = document.querySelector('.people-search-status');
+      const people = Array.from(document.querySelectorAll('#people-search-results .person-summary'));
+
+      if (!input || !status || people.length === 0) {
+        return;
+      }
+
+      const names = people.map((person) => ({
+        element: person,
+        name: person.querySelector('a')?.textContent.trim().toLowerCase() || ''
+      }));
+
+      input.addEventListener('input', () => {
+        const query = input.value.trim().toLowerCase();
+        let visibleCount = 0;
+
+        names.forEach(({ element, name }) => {
+          const isVisible = query === '' || name.includes(query);
+          element.hidden = !isVisible;
+          if (isVisible) {
+            visibleCount += 1;
+          }
+        });
+
+        status.textContent = query === ''
+          ? ''
+          : `${visibleCount} ${visibleCount === 1 ? 'person' : 'people'} found`;
+      });
+    })();
+  </script>
 {{ end }}

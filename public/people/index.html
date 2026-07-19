@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head><script src="/GB-Family-History/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=GB-Family-History/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <title>People | GB Family History</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,12 +30,17 @@
 
     <main>
       
-  <h1>People</h1>
-  <div>
-    <p>Browse the people in the archive.</p>
-
+  <div class="people-heading">
+    <h1>People</h1>
+    <input id="people-search-input" type="search" autocomplete="off" placeholder="Search by name" aria-label="Search by name">
   </div>
-  
+  <div>
+    
+  </div>
+  <section class="people-search">
+    <p class="people-search-status" aria-live="polite"></p>
+    <div id="people-search-results">
+      
   <div class="page-list-header">
     
       
@@ -338,6 +343,41 @@
   </div>
 
 
+    </div>
+  </section>
+  <script>
+    (() => {
+      const input = document.querySelector('#people-search-input');
+      const status = document.querySelector('.people-search-status');
+      const people = Array.from(document.querySelectorAll('#people-search-results .person-summary'));
+
+      if (!input || !status || people.length === 0) {
+        return;
+      }
+
+      const names = people.map((person) => ({
+        element: person,
+        name: person.querySelector('a')?.textContent.trim().toLowerCase() || ''
+      }));
+
+      input.addEventListener('input', () => {
+        const query = input.value.trim().toLowerCase();
+        let visibleCount = 0;
+
+        names.forEach(({ element, name }) => {
+          const isVisible = query === '' || name.includes(query);
+          element.hidden = !isVisible;
+          if (isVisible) {
+            visibleCount += 1;
+          }
+        });
+
+        status.textContent = query === ''
+          ? ''
+          : `${visibleCount} ${visibleCount === 1 ? 'person' : 'people'} found`;
+      });
+    })();
+  </script>
 
     </main>
     <footer>

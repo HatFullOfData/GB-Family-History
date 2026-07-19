@@ -158,3 +158,43 @@ footer {
 .person-summary {
   line-height: 1.1;
 }
+
+.people-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.people-heading h1 {
+  margin-right: auto;
+}
+
+.people-search {
+  margin-top: 1rem;
+}
+
+.people-heading input[type="search"] {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 24rem;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font: inherit;
+}
+
+.people-search-status {
+  min-height: 1.5rem;
+  color: #555;
+}
+
+@media (max-width: 700px) {
+  .people-heading {
+    display: block;
+  }
+
+  .people-heading input[type="search"] {
+    max-width: none;
+  }
+}
