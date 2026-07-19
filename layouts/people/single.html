@@ -21,6 +21,7 @@
         <div class="person-biography">{{ .Content }}</div>
       </div>
     </div>
+    {{ partial "ancestor-tree.html" . }}
     {{ partial "relationship-list.html" (dict "title" "Parents" "values" .Params.parents "empty" "No parent links recorded." "render" "person-summary.html") }}
     {{ partial "spouse-list.html" (dict "page" .) }}
     {{ partial "children-list.html" (dict "page" . "title" "Children" "empty" "No child links recorded.") }}

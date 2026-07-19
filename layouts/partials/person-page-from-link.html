@@ -1,0 +1,22 @@
+{{ $target := false }}
+
+{{ with . }}
+  {{ if reflect.IsMap . }}
+    {{ with index . "person_id" }}
+      {{ $matches := where site.RegularPages "Params.id" . }}
+      {{ with first 1 $matches }}
+        {{ $target = index . 0 }}
+      {{ end }}
+    {{ end }}
+
+    {{ if not $target }}
+      {{ with index . "person" }}
+        {{ $target = site.GetPage . }}
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    {{ $target = site.GetPage . }}
+  {{ end }}
+{{ end }}
+
+{{ return $target }}

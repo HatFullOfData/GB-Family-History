@@ -1,6 +1,6 @@
 body {
   font-family: system-ui, sans-serif;
-  max-width: 48rem;
+  max-width: 72rem;
   margin: 0 auto;
   padding: 1.5rem;
   line-height: 1.6;
@@ -53,7 +53,7 @@ nav ul {
   main,
   footer {
     box-sizing: border-box;
-    max-width: 48rem;
+    max-width: 72rem;
     margin-left: 18rem;
     margin-right: 2rem;
     padding-right: 1.5rem;
@@ -183,6 +183,108 @@ footer {
   margin-top: 1.5rem;
 }
 
+.ancestor-tree {
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+}
+
+.ancestor-tree-chart {
+  min-width: 64rem;
+}
+
+.ancestor-tree-row {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.ancestor-tree-row-great-grandparents {
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.ancestor-tree-row-grandparents {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.ancestor-tree-row-parents {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ancestor-tree-row-person {
+  grid-template-columns: minmax(8rem, 14rem);
+  justify-content: center;
+}
+
+.ancestor-tree-box {
+  box-sizing: border-box;
+  min-height: 4.75rem;
+  padding: 0.65rem;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  background: #fff;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.ancestor-tree-box a {
+  display: block;
+  font-weight: 700;
+}
+
+.ancestor-tree-box span {
+  display: block;
+  margin-top: 0.25rem;
+  color: #777;
+  font-size: 0.8rem;
+}
+
+.ancestor-tree-box.is-empty {
+  background: #fafafa;
+  border-style: dashed;
+}
+
+.ancestor-tree-connectors {
+  display: grid;
+  height: 1.4rem;
+}
+
+.ancestor-tree-connectors-to-grandparents {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.ancestor-tree-connectors-to-parents {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ancestor-tree-connectors-to-person {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.ancestor-tree-connectors span {
+  position: relative;
+}
+
+.ancestor-tree-connectors span::before {
+  content: "";
+  position: absolute;
+  top: 0.7rem;
+  left: 25%;
+  right: 25%;
+  border-top: 1px solid #bbb;
+}
+
+.ancestor-tree-connectors span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background:
+    linear-gradient(#bbb, #bbb) 25% 0 / 1px 0.7rem no-repeat,
+    linear-gradient(#bbb, #bbb) 75% 0 / 1px 0.7rem no-repeat,
+    linear-gradient(#bbb, #bbb) 50% 0.7rem / 1px 0.7rem no-repeat;
+}
+
 @media (max-width: 700px) {
   .person-profile-top.has-portrait {
     grid-template-columns: 1fr;
@@ -216,10 +318,6 @@ footer {
   gap: 1rem;
 }
 
-.people-heading h1 {
-  margin-right: auto;
-}
-
 .people-search {
   margin-top: 1rem;
 }
@@ -235,8 +333,10 @@ footer {
 }
 
 .people-search-status {
-  min-height: 1.5rem;
+  min-height: 1.1rem;
   color: #555;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 @media (max-width: 700px) {
@@ -247,4 +347,10 @@ footer {
   .people-heading input[type="search"] {
     max-width: none;
   }
+}
+
+.people-heading h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 10px;
 }

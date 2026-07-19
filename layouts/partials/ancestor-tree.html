@@ -1,0 +1,76 @@
+{{ $person := . }}
+{{ $parentEntries := $person.Params.parents | default (slice) }}
+{{ $parents := slice }}
+
+{{ range $slot := seq 0 1 }}
+  {{ $ancestor := false }}
+  {{ if lt $slot (len $parentEntries) }}
+    {{ $ancestor = partial "person-page-from-link.html" (index $parentEntries $slot) }}
+  {{ end }}
+  {{ $parents = $parents | append $ancestor }}
+{{ end }}
+
+{{ $grandparents := slice }}
+{{ range $parent := $parents }}
+  {{ $entries := slice }}
+  {{ with $parent }}
+    {{ $entries = .Params.parents | default (slice) }}
+  {{ end }}
+
+  {{ range $slot := seq 0 1 }}
+    {{ $ancestor := false }}
+    {{ if lt $slot (len $entries) }}
+      {{ $ancestor = partial "person-page-from-link.html" (index $entries $slot) }}
+    {{ end }}
+    {{ $grandparents = $grandparents | append $ancestor }}
+  {{ end }}
+{{ end }}
+
+{{ $greatGrandparents := slice }}
+{{ range $grandparent := $grandparents }}
+  {{ $entries := slice }}
+  {{ with $grandparent }}
+    {{ $entries = .Params.parents | default (slice) }}
+  {{ end }}
+
+  {{ range $slot := seq 0 1 }}
+    {{ $ancestor := false }}
+    {{ if lt $slot (len $entries) }}
+      {{ $ancestor = partial "person-page-from-link.html" (index $entries $slot) }}
+    {{ end }}
+    {{ $greatGrandparents = $greatGrandparents | append $ancestor }}
+  {{ end }}
+{{ end }}
+
+<section class="ancestor-tree" aria-labelledby="ancestor-tree-heading">
+  <h2 id="ancestor-tree-heading">Ancestor tree</h2>
+  <div class="ancestor-tree-chart">
+    <div class="ancestor-tree-row ancestor-tree-row-great-grandparents">
+      {{ range $greatGrandparents }}
+        {{ partial "ancestor-tree-box.html" (dict "person" .) }}
+      {{ end }}
+    </div>
+    <div class="ancestor-tree-connectors ancestor-tree-connectors-to-grandparents" aria-hidden="true">
+      {{ range seq 1 4 }}<span></span>{{ end }}
+    </div>
+    <div class="ancestor-tree-row ancestor-tree-row-grandparents">
+      {{ range $grandparents }}
+        {{ partial "ancestor-tree-box.html" (dict "person" .) }}
+      {{ end }}
+    </div>
+    <div class="ancestor-tree-connectors ancestor-tree-connectors-to-parents" aria-hidden="true">
+      {{ range seq 1 2 }}<span></span>{{ end }}
+    </div>
+    <div class="ancestor-tree-row ancestor-tree-row-parents">
+      {{ range $parents }}
+        {{ partial "ancestor-tree-box.html" (dict "person" .) }}
+      {{ end }}
+    </div>
+    <div class="ancestor-tree-connectors ancestor-tree-connectors-to-person" aria-hidden="true">
+      <span></span>
+    </div>
+    <div class="ancestor-tree-row ancestor-tree-row-person">
+      {{ partial "ancestor-tree-box.html" (dict "person" $person) }}
+    </div>
+  </div>
+</section>
