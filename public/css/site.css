@@ -98,8 +98,19 @@ footer {
   background: #fff8e8;
 }
 
+.person-profile-top {
+  margin-bottom: 1.5rem;
+}
+
+.person-profile-top.has-portrait {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+  gap: 1.5rem 3rem;
+  align-items: start;
+}
+
 .person-portrait {
-  margin: 0 0 1rem 0;
+  margin: 0;
 }
 
 .person-portrait img {
@@ -108,4 +119,42 @@ footer {
   height: auto;
   border-radius: 8px;
   display: block;
+}
+
+.person-biography {
+  margin-top: 1rem;
+}
+
+.person-biography > :first-child {
+  margin-top: 0;
+}
+
+.person-page > section {
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 700px) {
+  .person-profile-top.has-portrait {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.person-thumb img {
+  max-width: 50px;
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
+  display: block;
+  float: left;
+  margin-right: 0.5rem;
+}
+
+.extrainfo {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.person-summary {
+  line-height: 1.1;
 }

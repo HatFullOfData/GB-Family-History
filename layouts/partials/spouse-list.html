@@ -55,7 +55,7 @@
       {{ range . }}
         {{ $extranote := "" }}
         {{ if or .marriageYear .marriagePlace }}
-          {{ $extranote = printf "m. %s%s%s" .marriageYear (cond (and .marriageYear .marriagePlace) ", " "") .marriagePlace }}
+          {{ $extranote = printf "m. %s%s%s" .marriageYear (cond (and (ne .marriageYear "") (ne .marriagePlace "")) ", " "") .marriagePlace }}
         {{ else }}
           {{ with .display }}
             {{ $extranote = . }}

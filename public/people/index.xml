@@ -2,52 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>People on GB Family History</title>
-    <link>https://hatfullofdata.github.io/GB-Family-History/people/</link>
+    <link>http://localhost:1313/GB-Family-History/people/</link>
     <description>Recent content in People on GB Family History</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="https://hatfullofdata.github.io/GB-Family-History/people/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Elizabeth Brown</title>
-      <link>https://hatfullofdata.github.io/GB-Family-History/people/elizabeth-brown/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://hatfullofdata.github.io/GB-Family-History/people/elizabeth-brown/</guid>
-      <description>Born in Leeds, Elizabeth Brown later moved to York with her family.</description>
-    </item>
+    <atom:link href="http://localhost:1313/GB-Family-History/people/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Frances Mary Carpenter</title>
-      <link>https://hatfullofdata.github.io/GB-Family-History/people/frances-mary-carpenter/</link>
+      <link>http://localhost:1313/GB-Family-History/people/frances-mary-carpenter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://hatfullofdata.github.io/GB-Family-History/people/frances-mary-carpenter/</guid>
+      <guid>http://localhost:1313/GB-Family-History/people/frances-mary-carpenter/</guid>
       <description>Frances Mary Carpenter (nee Kimpton) was born on 12 October 1943.</description>
     </item>
     <item>
-      <title>George Harry Francis Graham-Brown</title>
-      <link>https://hatfullofdata.github.io/GB-Family-History/people/george-graham-brown/</link>
+      <title>Frederick David Kimpton</title>
+      <link>http://localhost:1313/GB-Family-History/people/frederick-david-kimpton/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://hatfullofdata.github.io/GB-Family-History/people/george-graham-brown/</guid>
+      <guid>http://localhost:1313/GB-Family-History/people/frederick-david-kimpton/</guid>
+      <description>Frederick David Kimpton, known as Fred, lived from 1905 to 1984.</description>
+    </item>
+    <item>
+      <title>George Harry Francis Graham-Brown</title>
+      <link>http://localhost:1313/GB-Family-History/people/george-graham-brown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/GB-Family-History/people/george-graham-brown/</guid>
       <description>George Harry Francis Graham-Brown, known as Harry.</description>
     </item>
     <item>
-      <title>Laura Graham-Brown</title>
-      <link>https://hatfullofdata.github.io/GB-Family-History/people/laura-graham-brown/</link>
+      <title>Joan Sheppard</title>
+      <link>http://localhost:1313/GB-Family-History/people/joan-sheppard/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://hatfullofdata.github.io/GB-Family-History/people/laura-graham-brown/</guid>
+      <guid>http://localhost:1313/GB-Family-History/people/joan-sheppard/</guid>
+      <description>Joan Sheppard lived from 1925 to 1987 and was married to Frederick David Kimpton.</description>
+    </item>
+    <item>
+      <title>Laura Graham-Brown</title>
+      <link>http://localhost:1313/GB-Family-History/people/laura-graham-brown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/GB-Family-History/people/laura-graham-brown/</guid>
       <description>Laura Graham-Brown was born in Lusaka, Zambia.</description>
     </item>
     <item>
       <title>Michael Ashley Carpenter</title>
-      <link>https://hatfullofdata.github.io/GB-Family-History/people/michael-ashley-carpenter/</link>
+      <link>http://localhost:1313/GB-Family-History/people/michael-ashley-carpenter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://hatfullofdata.github.io/GB-Family-History/people/michael-ashley-carpenter/</guid>
+      <guid>http://localhost:1313/GB-Family-History/people/michael-ashley-carpenter/</guid>
       <description>A carpernter by trade and by name, a teacher for his career and a craftsman</description>
     </item>
     <item>
-      <title>Thomas Wilson</title>
-      <link>https://hatfullofdata.github.io/GB-Family-History/people/thomas-wilson/</link>
+      <title>Muriel Augusta Turner</title>
+      <link>http://localhost:1313/GB-Family-History/people/muriel-augusta-turner/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://hatfullofdata.github.io/GB-Family-History/people/thomas-wilson/</guid>
-      <description>Thomas Wilson worked in Yorkshire and moved with his family to York in the early 1900s.</description>
+      <guid>http://localhost:1313/GB-Family-History/people/muriel-augusta-turner/</guid>
+      <description>Muriel Augusta Turner died in 1949 and was married to Frederick David Kimpton.</description>
     </item>
   </channel>
 </rss>

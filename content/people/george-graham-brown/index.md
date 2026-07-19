@@ -18,6 +18,10 @@ parents: []
 spouses:
   - person_id: "P-GRB-19681112-01"
     person: "/people/laura-graham-brown/"
-    display: "married 9 April 1994 at Stowe School, Buckingham"
+    status: "married"
+    marriage:
+      date: "1994-04-09"
+      display: "9 April 1994"
+      place: "Stowe School, Buckingham"
 ---
 George Harry Francis Graham-Brown is known as Harry.

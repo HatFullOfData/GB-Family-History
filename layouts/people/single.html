@@ -3,20 +3,24 @@
   {{ with .Params.birth.place }}{{ $birthPlace = site.GetPage . }}{{ end }}
   {{ $deathPlace := "" }}
   {{ with .Params.death.place }}{{ $deathPlace = site.GetPage . }}{{ end }}
-  <article>
-    {{ partial "entity-header.html" (dict "page" . "taxonomies" (slice "surname" "tags")) }}
-    {{ with .Params.portrait }}
-      <figure class="person-portrait">
-        <img src="{{ . | relURL }}" alt="{{ $.Title }} portrait" loading="lazy">
-      </figure>
-    {{ end }}
-    {{ partial "metadata-list.html" (dict "items" (slice
-      (dict "label" "Born" "value" .Params.birth.display)
-      (dict "label" "Birth place" "page" $birthPlace)
-      (dict "label" "Died" "value" .Params.death.display)
-      (dict "label" "Death place" "page" $deathPlace)
-    )) }}
-    <div>{{ .Content }}</div>
+  <article class="person-page">
+    <div class="person-profile-top{{ with .Params.portrait }} has-portrait{{ end }}">
+      {{ with .Params.portrait }}
+        <figure class="person-portrait">
+          <img src="{{ . | relURL }}" alt="{{ $.Title }} portrait" loading="lazy">
+        </figure>
+      {{ end }}
+      <div class="person-details">
+        {{ partial "entity-header.html" (dict "page" . "taxonomies" (slice "surname" "tags")) }}
+        {{ partial "metadata-list.html" (dict "items" (slice
+          (dict "label" "Born" "value" .Params.birth.display)
+          (dict "label" "Birth place" "page" $birthPlace)
+          (dict "label" "Died" "value" .Params.death.display)
+          (dict "label" "Death place" "page" $deathPlace)
+        )) }}
+        <div class="person-biography">{{ .Content }}</div>
+      </div>
+    </div>
     {{ partial "relationship-list.html" (dict "title" "Parents" "values" .Params.parents "empty" "No parent links recorded." "render" "person-summary.html") }}
     {{ partial "spouse-list.html" (dict "page" .) }}
     {{ partial "children-list.html" (dict "page" . "title" "Children" "empty" "No child links recorded.") }}
