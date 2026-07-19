@@ -25,3 +25,6 @@ menu:
     - name: "Sources"
       url: "/sources/"
       weight: 5
+    - name: "People Directory"
+      url: "/people-directory/"
+      weight: 6

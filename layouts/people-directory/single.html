@@ -1,0 +1,50 @@
+{{ define "main" }}
+  <article class="page-content">
+    <h1>{{ .Title }}</h1>
+    <div>{{ .Content }}</div>
+
+    {{ $people := where site.RegularPages "Section" "people" }}
+    {{ $rows := slice }}
+    {{ range $people }}
+      {{ $surname := .Params.surname | default .Title }}
+      {{ $birthYear := "9999" }}
+      {{ with .Params.birth.date }}
+        {{ $birth := printf "%v" . }}
+        {{ if ge (len $birth) 4 }}
+          {{ $birthYear = slicestr $birth 0 4 }}
+        {{ else }}
+          {{ $birthYear = $birth }}
+        {{ end }}
+      {{ end }}
+      {{ $rows = $rows | append (dict "page" . "sortKey" (printf "%s|%s|%s" (lower $surname) $birthYear (lower .Title))) }}
+    {{ end }}
+    <table class="people-directory">
+      <thead>
+        <tr>
+          <th>Person ID</th>
+          <th>Name</th>
+          <th>Birth year</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ range sort $rows "sortKey" }}
+          {{ $person := .page }}
+          {{ $birthYear := "????" }}
+          {{ with $person.Params.birth.date }}
+            {{ $birth := printf "%v" . }}
+            {{ if ge (len $birth) 4 }}
+              {{ $birthYear = slicestr $birth 0 4 }}
+            {{ else }}
+              {{ $birthYear = $birth }}
+            {{ end }}
+          {{ end }}
+          <tr>
+            <td>{{ $person.Params.id }}</td>
+            <td><a href="{{ $person.RelPermalink }}">{{ $person.Title }}</a></td>
+            <td>{{ $birthYear }}</td>
+          </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </article>
+{{ end }}
