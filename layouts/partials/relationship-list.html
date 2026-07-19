@@ -1,7 +1,6 @@
 <section>
   <h2>{{ .title }}</h2>
   {{ with .values }}
-    <ul>
       {{ range . }}
         {{ $entry := . }}
         {{ $target := false }}
@@ -27,11 +26,10 @@
           {{ if $.render }}
             {{ partial $.render . }}
           {{ else }}
-            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            <p><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
           {{ end }}
         {{ end }}
       {{ end }}
-    </ul>
   {{ else }}
     <p>{{ .empty | default "No entries yet." }}</p>
   {{ end }}

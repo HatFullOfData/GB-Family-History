@@ -34,9 +34,12 @@
   <h2>Spouses</h2>
   {{ with $spouses }}
 
-    {{ range . }}
-      {{ partial "person-summary.html" .page }}
-    {{ end }}
+      {{ range . }}
+        <li>
+          <a href="{{ .page.RelPermalink }}">{{ .page.Title }}</a>
+          {{ with .display }} ({{ . }}){{ end }}
+        </li>
+      {{ end }}
 
   {{ else }}
     <p>No spouse links recorded.</p>

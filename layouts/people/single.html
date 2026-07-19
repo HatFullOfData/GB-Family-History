@@ -17,7 +17,7 @@
       (dict "label" "Death place" "page" $deathPlace)
     )) }}
     <div>{{ .Content }}</div>
-    {{ partial "relationship-list.html" (dict "title" "Parents" "values" .Params.parents "empty" "No parent links recorded.") }}
+    {{ partial "relationship-list.html" (dict "title" "Parents" "values" .Params.parents "empty" "No parent links recorded." "render" "person-summary.html") }}
     {{ partial "spouse-list.html" (dict "page" .) }}
     {{ partial "children-list.html" (dict "page" . "title" "Children" "empty" "No child links recorded.") }}
     {{ partial "backlink-list.html" (dict "page" . "section" "stories" "param" "people" "title" "Stories" "empty" "No related stories yet.") }}

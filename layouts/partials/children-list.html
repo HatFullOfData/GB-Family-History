@@ -27,11 +27,11 @@
 <section>
   <h2>{{ .title }}</h2>
   {{ with sort $children "Title" }}
-    <ul>
-      {{ range . }}
-        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-      {{ end }}
-    </ul>
+    <div class="children-list">
+    {{ range . }}
+      {{ partial "person-summary.html" . }}
+    {{ end }}
+    </div>
   {{ else }}
     <p>{{ .empty | default "No entries yet." }}</p>
   {{ end }}
