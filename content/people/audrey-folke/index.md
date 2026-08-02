@@ -18,7 +18,7 @@ death:
 
 parents:
   - person_id: "P-OVA-UNK-01"
-    person: "/people/christabell-ovans/"
+    person: "/people/christobel-frederica-ovans/"
   - person_id: "P-FOL-UNK-02"
     person: "/people/frank-folke/"
 spouses: []

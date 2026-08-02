@@ -1,9 +1,9 @@
 ---
-id: "P-OVA-UNK-01"
-title: "Christabell Ovans"
+id: "P-PHI-UNK-02"
+title: "Unknown Phipps-Hornby"
 
-given_name: "Christabell"
-surname: "Ovans"
+given_name: ""
+surname: "Phipps-Hornby"
 known_as: ""
 
 birth:
