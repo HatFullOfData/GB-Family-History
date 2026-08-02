@@ -1,0 +1,69 @@
+<li class="story-card">
+  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  {{ with .Params.summary }}<p class="entity-summary">{{ . }}</p>{{ end }}
+  {{ partial "metadata-list.html" (dict "items" (slice (dict "label" "Date" "value" .Params.story_date))) }}
+
+  {{ with .Params.locations }}
+    <div class="story-card-section">
+      <h4>Locations</h4>
+      <ul class="compact-link-list">
+        {{ range . }}
+          {{ with site.GetPage . }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+        {{ end }}
+      </ul>
+    </div>
+  {{ end }}
+
+  {{ with .Params.photos }}
+    <div class="story-card-section">
+      <h4>Photos</h4>
+      <ul class="compact-link-list">
+        {{ range . }}
+          {{ if reflect.IsMap . }}
+            {{ $title := index . "title" | default (index . "caption") | default "Photo" }}
+            {{ with index . "image" }}<li><a href="{{ . | relURL }}">{{ $title }}</a></li>{{ end }}
+          {{ else }}
+            <li><a href="{{ . | relURL }}">Photo</a></li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+  {{ end }}
+
+  {{ with .Params.links }}
+    <div class="story-card-section">
+      <h4>Links</h4>
+      <ul class="compact-link-list">
+        {{ range . }}
+          {{ if reflect.IsMap . }}
+            {{ $title := index . "title" | default (index . "url") }}
+            {{ with index . "url" }}<li><a href="{{ . }}">{{ $title }}</a></li>{{ end }}
+          {{ else }}
+            <li><a href="{{ . }}">{{ . }}</a></li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+  {{ end }}
+
+  {{ with .Params.info }}
+    <div class="story-card-section">
+      <h4>Other info</h4>
+      <dl class="compact-info-list">
+        {{ range . }}
+          {{ if reflect.IsMap . }}
+            <div>
+              <dt>{{ index . "label" }}</dt>
+              <dd>{{ index . "value" }}</dd>
+            </div>
+          {{ else }}
+            <div>
+              <dt>Note</dt>
+              <dd>{{ . }}</dd>
+            </div>
+          {{ end }}
+        {{ end }}
+      </dl>
+    </div>
+  {{ end }}
+</li>

@@ -1,0 +1,54 @@
+{{ with .values }}
+  <section>
+    <h2>{{ $.title }}</h2>
+    {{ if eq $.type "photos" }}
+      <div class="story-photo-list">
+        {{ range . }}
+          {{ if reflect.IsMap . }}
+            {{ $image := index . "image" }}
+            {{ $title := index . "title" | default (index . "caption") | default "Photo" }}
+            {{ $caption := index . "caption" }}
+            {{ with $image }}
+              <figure>
+                <img src="{{ . | relURL }}" alt="{{ $title }}" loading="lazy">
+                {{ with $caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+              </figure>
+            {{ end }}
+          {{ else }}
+            <figure>
+              <img src="{{ . | relURL }}" alt="Story photo" loading="lazy">
+            </figure>
+          {{ end }}
+        {{ end }}
+      </div>
+    {{ else if eq $.type "links" }}
+      <ul>
+        {{ range . }}
+          {{ if reflect.IsMap . }}
+            {{ $title := index . "title" | default (index . "url") }}
+            {{ $note := index . "note" }}
+            {{ with index . "url" }}<li><a href="{{ . }}">{{ $title }}</a>{{ with $note }} - {{ . }}{{ end }}</li>{{ end }}
+          {{ else }}
+            <li><a href="{{ . }}">{{ . }}</a></li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    {{ else }}
+      <dl class="metadata-list">
+        {{ range . }}
+          {{ if reflect.IsMap . }}
+            <div>
+              <dt>{{ index . "label" }}</dt>
+              <dd>{{ index . "value" }}</dd>
+            </div>
+          {{ else }}
+            <div>
+              <dt>Note</dt>
+              <dd>{{ . }}</dd>
+            </div>
+          {{ end }}
+        {{ end }}
+      </dl>
+    {{ end }}
+  </section>
+{{ end }}

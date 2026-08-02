@@ -258,6 +258,70 @@ footer {
   margin-top: 0;
 }
 
+.story-card {
+  margin-bottom: 1.25rem;
+}
+
+.story-card h3 {
+  margin-bottom: 0.25rem;
+}
+
+.story-card-section {
+  margin-top: 0.75rem;
+}
+
+.story-card-section h4 {
+  margin: 0 0 0.25rem;
+}
+
+.compact-link-list {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.compact-info-list {
+  display: grid;
+  gap: 0.25rem;
+  margin: 0;
+}
+
+.compact-info-list div {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 0.5rem;
+}
+
+.compact-info-list dt {
+  font-weight: 700;
+}
+
+.compact-info-list dd {
+  margin: 0;
+}
+
+.story-photo-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 1rem;
+}
+
+.story-photo-list figure {
+  margin: 0;
+}
+
+.story-photo-list img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.story-photo-list figcaption {
+  margin-top: 0.35rem;
+  color: #555;
+  font-size: 0.95rem;
+}
+
 .descendant-tree {
   overflow-x: auto;
   padding-bottom: 0.25rem;

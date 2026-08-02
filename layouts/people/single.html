@@ -47,7 +47,7 @@
           {{ partial "related-people-list.html" (dict "page" .) }}
         </div>
         <div class="person-tab-panel person-tab-panel-stories">
-          {{ partial "backlink-list.html" (dict "page" . "section" "stories" "param" "people" "title" "Stories" "empty" "No related stories yet.") }}
+          {{ partial "backlink-list.html" (dict "page" . "section" "stories" "param" "people" "title" "Stories" "render" "story-card.html" "empty" "No related stories yet.") }}
         </div>
       </div>
     </section>

@@ -5,6 +5,9 @@
     {{ partial "relationship-list.html" (dict "title" "Locations" "values" .Params.locations) }}
     {{ partial "relationship-list.html" (dict "title" "People" "values" .Params.people "render" "person-summary.html") }}
     {{ partial "relationship-list.html" (dict "title" "Sources" "values" .Params.sources "render" "source-card.html" "empty" "No source links recorded.") }}
+    {{ partial "story-extra-list.html" (dict "title" "Photos" "values" .Params.photos "type" "photos") }}
+    {{ partial "story-extra-list.html" (dict "title" "Links" "values" .Params.links "type" "links") }}
+    {{ partial "story-extra-list.html" (dict "title" "Other info" "values" .Params.info "type" "info") }}
     <div>{{ .Content }}</div>
   </article>
 {{ end }}

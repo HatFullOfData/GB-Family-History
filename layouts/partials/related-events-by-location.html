@@ -12,6 +12,17 @@
   {{ $dir := strings.Trim .Dir "/" }}
   {{ $refs = $refs | append (printf "/%s" $dir) (printf "/%s/" $dir) }}
 {{ end }}
+{{ $normalizedRefs := slice }}
+{{ range $refs }}
+  {{ $ref := printf "%v" . }}
+  {{ $normalizedRefs = $normalizedRefs | append $ref }}
+  {{ with site.Home.RelPermalink }}
+    {{ if ne . "/" }}
+      {{ $normalizedRefs = $normalizedRefs | append (strings.TrimPrefix . $ref) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ $refs = uniq $normalizedRefs }}
 {{ $events := slice }}
 {{ range where site.RegularPages "Section" "people" }}
   {{ $person := . }}
@@ -51,13 +62,21 @@
           {{ $marriage := . }}
           {{ with index $marriage "location" }}
             {{ if in $refs (printf "%v" .) }}
-              {{ $date := "" }}
-              {{ $sortDate := "9999-99-99" }}
-              {{ with index $marriage "display" }}{{ $date = printf "%v" . }}{{ end }}
-              {{ with index $marriage "date" }}{{ $sortDate = printf "%v" . }}{{ end }}
-              {{ $label := "Married" }}
-              {{ with $spouse }}{{ $label = printf "Married %s" .Title }}{{ end }}
-              {{ $events = $events | append (dict "person" $person "label" $label "date" $date "sortDate" $sortDate) }}
+              {{ $includeMarriage := true }}
+              {{ with $spouse }}
+                {{ if and $person.Params.id .Params.id }}
+                  {{ $includeMarriage = le (printf "%v" $person.Params.id) (printf "%v" .Params.id) }}
+                {{ end }}
+              {{ end }}
+              {{ if $includeMarriage }}
+                {{ $date := "" }}
+                {{ $sortDate := "9999-99-99" }}
+                {{ with index $marriage "display" }}{{ $date = printf "%v" . }}{{ end }}
+                {{ with index $marriage "date" }}{{ $sortDate = printf "%v" . }}{{ end }}
+                {{ $label := "Married" }}
+                {{ with $spouse }}{{ $label = printf "Married %s" .Title }}{{ end }}
+                {{ $events = $events | append (dict "person" $person "label" $label "date" $date "sortDate" $sortDate) }}
+              {{ end }}
             {{ end }}
           {{ end }}
         {{ end }}
