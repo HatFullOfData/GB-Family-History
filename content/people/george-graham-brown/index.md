@@ -14,7 +14,11 @@ birth:
   display: "25 November 1963"
   place: "Darlington, England"
 
-parents: []
+parents:
+  - person_id: "P-STI-UNK-01"
+    person: "/people/frederica-mary-stileman/"
+  - person_id: "P-GRB-UNK-01"
+    person: "/people/john-francis-graham-brown/"
 spouses:
   - person_id: "P-GRB-19681112-01"
     person: "/people/laura-graham-brown/"
