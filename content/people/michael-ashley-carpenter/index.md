@@ -20,7 +20,11 @@ death:
   display: ""
   place: ""
 
-parents: []
+parents:
+  - person_id: "P-ROW-UNK-01"
+    person: "/people/doris-rowe/"
+  - person_id: "P-CAR-UNK-01"
+    person: "/people/frank-carpenter/"
 spouses:
   - person_id: "P-CAR-19431012-01"
     person: "/people/frances-mary-carpenter/"
