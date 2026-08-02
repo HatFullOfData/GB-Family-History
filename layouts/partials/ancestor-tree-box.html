@@ -18,6 +18,9 @@
     </a>
     <a class="ancestor-tree-name" href="{{ .RelPermalink }}">{{ .Title }}</a>
     {{ $birthyear := "????" }}
+    {{ with .Params.birth.display }}
+      {{ $birthyear = printf "%v" . }}
+    {{ end }}
     {{ with .Params.birth.date }}
       {{ $birth := printf "%v" . }}
       {{ if ge (len $birth) 4 }}
@@ -30,6 +33,9 @@
     {{ if .Params.living }}
       {{ $deathyear = "present" }}
     {{ else }}
+      {{ with .Params.death.display }}
+        {{ $deathyear = printf "%v" . }}
+      {{ end }}
       {{ with .Params.death.date }}
         {{ $death := printf "%v" . }}
         {{ if ge (len $death) 4 }}

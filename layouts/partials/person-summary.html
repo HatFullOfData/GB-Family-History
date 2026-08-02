@@ -20,6 +20,9 @@
 
   <a href="{{ $person.RelPermalink }}">{{ $person.Title }}</a><br/>
   {{ $birthyear := "????" }}
+  {{ with $person.Params.birth.display }}
+    {{ $birthyear = printf "%v" . }}
+  {{ end }}
   {{ with $person.Params.birth.date }}
     {{ $birth := printf "%v" . }}
     {{ if ge (len $birth) 4 }}
@@ -32,6 +35,9 @@
   {{ if $person.Params.living }}
     {{ $deathyear = "present" }}
   {{ else }}
+    {{ with $person.Params.death.display }}
+      {{ $deathyear = printf "%v" . }}
+    {{ end }}
     {{ with $person.Params.death.date }}
       {{ $death := printf "%v" . }}
       {{ if ge (len $death) 4 }}
