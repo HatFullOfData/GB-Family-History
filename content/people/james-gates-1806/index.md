@@ -10,6 +10,7 @@ living: false
 birth:
   display: "1806"
   place: "Aston Clinton"
+  location: "/locations/aston-clinton/"
 
 parents: []
 spouses:

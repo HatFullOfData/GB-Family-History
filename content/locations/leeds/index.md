@@ -1,6 +1,6 @@
 ---
 title: "Leeds"
-summary: "A major Yorkshire city that appears repeatedly in this family history."
+summary: "A major city in West Yorkshire, England."
 place_type: "city"
 parent_location: "/locations/west-yorkshire/"
 coordinates:
@@ -10,4 +10,4 @@ coordinates:
 tags:
   - "west yorkshire"
 ---
-Leeds is a major city in West Yorkshire and appears repeatedly in this family history.
+Leeds is a major city in West Yorkshire, England.

@@ -10,4 +10,4 @@ coordinates:
 tags:
   - "zambia"
 ---
-Zambia is the southern African country where Laura Carpenter was born.
+Zambia is a country in southern Africa.

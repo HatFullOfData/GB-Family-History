@@ -50,11 +50,25 @@
       <description></description>
     </item>
     <item>
+      <title>Aston Clinton</title>
+      <link>http://localhost:1313/GB-Family-History/locations/aston-clinton/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/GB-Family-History/locations/aston-clinton/</guid>
+      <description>A village in Buckinghamshire, England.</description>
+    </item>
+    <item>
       <title>Audrey Folke</title>
       <link>http://localhost:1313/GB-Family-History/people/audrey-folke/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/GB-Family-History/people/audrey-folke/</guid>
       <description></description>
+    </item>
+    <item>
+      <title>Aylesbury</title>
+      <link>http://localhost:1313/GB-Family-History/locations/aylesbury/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/GB-Family-History/locations/aylesbury/</guid>
+      <description>A market town in Buckinghamshire, England.</description>
     </item>
     <item>
       <title>Benjamin Hawkins</title>
@@ -85,6 +99,13 @@
       <description>An English county.</description>
     </item>
     <item>
+      <title>Caroline Plested</title>
+      <link>http://localhost:1313/GB-Family-History/people/caroline-plested/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/GB-Family-History/people/caroline-plested/</guid>
+      <description>Caroline Plested, known as Carrie, was born in 1874.</description>
+    </item>
+    <item>
       <title>Charlie Kimpton</title>
       <link>http://localhost:1313/GB-Family-History/people/charlie-kimpton/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -113,6 +134,13 @@
       <description>David Kimpton worked as a blacksmith.</description>
     </item>
     <item>
+      <title>Dover</title>
+      <link>http://localhost:1313/GB-Family-History/locations/dover/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/GB-Family-History/locations/dover/</guid>
+      <description>A town and ferry port in Kent, England.</description>
+    </item>
+    <item>
       <title>Elizabeth Annie Kimpton</title>
       <link>http://localhost:1313/GB-Family-History/people/elizabeth-annie-kimpton/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -138,7 +166,7 @@
       <link>http://localhost:1313/GB-Family-History/locations/england/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/GB-Family-History/locations/england/</guid>
-      <description>The country in which several places in this family history are located.</description>
+      <description>A country in north-western Europe.</description>
     </item>
     <item>
       <title>Esther Gates</title>
@@ -211,6 +239,13 @@
       <description>George Gates was born in 1840 and worked as a bookmaker.</description>
     </item>
     <item>
+      <title>George Gates</title>
+      <link>http://localhost:1313/GB-Family-History/people/george-gates-1864/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/GB-Family-History/people/george-gates-1864/</guid>
+      <description>George Gates was born in 1864.</description>
+    </item>
+    <item>
       <title>George Harry Francis Graham-Brown</title>
       <link>http://localhost:1313/GB-Family-History/people/george-graham-brown/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -244,6 +279,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/GB-Family-History/people/james-gates-1828/</guid>
       <description>James Gates was born in 1828 and worked as a bootmaker.</description>
+    </item>
+    <item>
+      <title>James Gates</title>
+      <link>http://localhost:1313/GB-Family-History/people/james-gates-1874/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/GB-Family-History/people/james-gates-1874/</guid>
+      <description>James Gates, known as Jim, was born in 1874.</description>
     </item>
     <item>
       <title>Joan Sheppard</title>
@@ -295,6 +337,13 @@
       <description></description>
     </item>
     <item>
+      <title>Kent</title>
+      <link>http://localhost:1313/GB-Family-History/locations/kent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/GB-Family-History/locations/kent/</guid>
+      <description>A county in south-east England.</description>
+    </item>
+    <item>
       <title>Laura Carpenter</title>
       <link>http://localhost:1313/GB-Family-History/people/laura-graham-brown/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -306,7 +355,7 @@
       <link>http://localhost:1313/GB-Family-History/locations/leeds/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/GB-Family-History/locations/leeds/</guid>
-      <description>A major Yorkshire city that appears repeatedly in this family history.</description>
+      <description>A major city in West Yorkshire, England.</description>
     </item>
     <item>
       <title>Lina Mary Phipps-Hornby</title>
@@ -335,6 +384,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/GB-Family-History/people/marion-timberlake/</guid>
       <description>Marion Timberlake worked as a teacher.</description>
+    </item>
+    <item>
+      <title>Mary</title>
+      <link>http://localhost:1313/GB-Family-History/people/mary-wife-of-george-gates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/GB-Family-History/people/mary-wife-of-george-gates/</guid>
+      <description>Mary was married to George Gates.</description>
     </item>
     <item>
       <title>Mary Ann Coleman</title>
@@ -419,6 +475,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/GB-Family-History/people/sarah-gates/</guid>
       <description>Sarah Gates was born in 1831 and worked as a straw plaiter.</description>
+    </item>
+    <item>
+      <title>Steeple Claydon</title>
+      <link>http://localhost:1313/GB-Family-History/locations/steeple-claydon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/GB-Family-History/locations/steeple-claydon/</guid>
+      <description>A village in Buckinghamshire, England.</description>
     </item>
     <item>
       <title>Stowe School</title>

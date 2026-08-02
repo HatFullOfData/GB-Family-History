@@ -11,4 +11,4 @@ tags:
   - "lusaka"
   - "zambia"
 ---
-Lusaka is the capital city of Zambia, and the birthplace of Laura Carpenter.
+Lusaka is the capital city of Zambia.

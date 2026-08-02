@@ -1,6 +1,6 @@
 ---
 title: "England"
-summary: "The country in which several places in this family history are located."
+summary: "A country in north-western Europe."
 place_type: "country"
 parent_location: ""
 coordinates:
@@ -10,4 +10,4 @@ coordinates:
 tags:
   - "england"
 ---
-England is the country in which several places in this family history are located.
+England is a country in north-western Europe.
