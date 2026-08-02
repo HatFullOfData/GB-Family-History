@@ -1,0 +1,97 @@
+{{ $person := . }}
+{{ $events := slice }}
+
+{{ with $person.Params.birth }}
+  {{ if reflect.IsMap . }}
+    {{ $date := "" }}
+    {{ $sortDate := "9999-99-99" }}
+    {{ with index . "display" }}{{ $date = printf "%v" . }}{{ end }}
+    {{ with index . "date" }}{{ $sortDate = printf "%v" . }}{{ end }}
+    {{ $place := "" }}
+    {{ $location := false }}
+    {{ with index . "place" }}{{ $place = printf "%v" . }}{{ end }}
+    {{ with index . "location" }}{{ $location = site.GetPage . }}{{ end }}
+    {{ if or $date $place $location }}
+      {{ $events = $events | append (dict "label" "Born" "date" $date "sortDate" $sortDate "place" $place "location" $location) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ with $person.Params.death }}
+  {{ if reflect.IsMap . }}
+    {{ $date := "" }}
+    {{ $sortDate := "9999-99-99" }}
+    {{ with index . "display" }}{{ $date = printf "%v" . }}{{ end }}
+    {{ with index . "date" }}{{ $sortDate = printf "%v" . }}{{ end }}
+    {{ $place := "" }}
+    {{ $location := false }}
+    {{ with index . "place" }}{{ $place = printf "%v" . }}{{ end }}
+    {{ with index . "location" }}{{ $location = site.GetPage . }}{{ end }}
+    {{ if or $date $place $location }}
+      {{ $events = $events | append (dict "label" "Died" "date" $date "sortDate" $sortDate "place" $place "location" $location) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ range $person.Params.spouses }}
+  {{ if reflect.IsMap . }}
+    {{ $spouse := partial "person-page-from-link.html" . }}
+    {{ with index . "marriage" }}
+      {{ if reflect.IsMap . }}
+        {{ $date := "" }}
+        {{ $sortDate := "9999-99-99" }}
+        {{ with index . "display" }}{{ $date = printf "%v" . }}{{ end }}
+        {{ with index . "date" }}{{ $sortDate = printf "%v" . }}{{ end }}
+        {{ $place := "" }}
+        {{ $location := false }}
+        {{ with index . "place" }}{{ $place = printf "%v" . }}{{ end }}
+        {{ with index . "location" }}{{ $location = site.GetPage . }}{{ end }}
+        {{ $label := "Married" }}
+        {{ with $spouse }}{{ $label = printf "Married %s" .Title }}{{ end }}
+        {{ if or $date $place $location }}
+          {{ $events = $events | append (dict "label" $label "date" $date "sortDate" $sortDate "place" $place "location" $location) }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ range $person.Params.events }}
+  {{ if reflect.IsMap . }}
+    {{ $date := "" }}
+    {{ $sortDate := "9999-99-99" }}
+    {{ with index . "display" }}{{ $date = printf "%v" . }}{{ end }}
+    {{ with index . "date" }}{{ $sortDate = printf "%v" . }}{{ end }}
+    {{ $place := "" }}
+    {{ $location := false }}
+    {{ with index . "place" }}{{ $place = printf "%v" . }}{{ end }}
+    {{ with index . "location" }}{{ $location = site.GetPage . }}{{ end }}
+    {{ $label := "Event" }}
+    {{ with index . "type" }}{{ $label = humanize (printf "%v" .) }}{{ end }}
+    {{ $description := "" }}
+    {{ with index . "description" }}{{ $description = printf "%v" . }}{{ end }}
+    {{ $events = $events | append (dict "label" $label "date" $date "sortDate" $sortDate "place" $place "location" $location "description" $description) }}
+  {{ end }}
+{{ end }}
+
+<section>
+  <h2>Events</h2>
+  {{ with sort $events "sortDate" }}
+    <ul class="event-list">
+      {{ range . }}
+        <li>
+          {{ with .date }}<span class="event-date">{{ . }}</span>{{ end }}
+          <span class="event-label">{{ .label }}</span>
+          {{ if .location }}
+            <a href="{{ .location.RelPermalink }}">{{ .location.Title }}</a>
+          {{ else }}
+            {{ with .place }}<span>{{ . }}</span>{{ end }}
+          {{ end }}
+          {{ with .description }}<span class="event-description">{{ . }}</span>{{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  {{ else }}
+    <p>No events recorded yet.</p>
+  {{ end }}
+</section>
