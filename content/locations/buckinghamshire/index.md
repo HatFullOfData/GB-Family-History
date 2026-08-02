@@ -1,6 +1,6 @@
 ---
 title: "Buckinghamshire"
-summary: "An English county that includes Buckingham and Stowe School."
+summary: "An English county."
 place_type: "county"
 parent_location: "/locations/england/"
 coordinates:

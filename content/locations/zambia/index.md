@@ -1,6 +1,6 @@
 ---
 title: "Zambia"
-summary: "The southern African country where Laura Carpenter was born."
+summary: "The southern African country."
 place_type: "country"
 parent_location: ""
 coordinates:

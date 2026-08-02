@@ -1,6 +1,6 @@
 ---
 title: "West Yorkshire"
-summary: "An English county that includes Leeds."
+summary: "A northern English county."
 place_type: "county"
 parent_location: "/locations/england/"
 coordinates:

@@ -1,6 +1,6 @@
 ---
 title: "Lusaka"
-summary: "The capital city of Zambia, and the birthplace of Laura Carpenter."
+summary: "The capital city of Zambia."
 place_type: "city"
 parent_location: "/locations/zambia/"
 coordinates:
