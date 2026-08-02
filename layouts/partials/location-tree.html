@@ -1,0 +1,20 @@
+{{ $pages := .pages }}
+{{ $roots := slice }}
+
+{{ range $page := $pages }}
+  {{ $parent := false }}
+  {{ with $page.Params.parent_location }}{{ $parent = site.GetPage . }}{{ end }}
+  {{ if or (not $parent) (not (in $pages $parent)) }}
+    {{ $roots = $roots | append $page }}
+  {{ end }}
+{{ end }}
+
+{{ with $roots }}
+  <ul class="location-tree">
+    {{ range sort . "Title" }}
+      {{ partial "location-tree-item.html" (dict "page" . "pages" $pages) }}
+    {{ end }}
+  </ul>
+{{ else }}
+  <p>{{ .empty | default "No locations recorded yet." }}</p>
+{{ end }}

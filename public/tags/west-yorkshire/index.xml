@@ -14,5 +14,12 @@
       <guid>https://hatfullofdata.github.io/GB-Family-History/locations/leeds/</guid>
       <description>A major Yorkshire city that appears repeatedly in this family history.</description>
     </item>
+    <item>
+      <title>West Yorkshire</title>
+      <link>https://hatfullofdata.github.io/GB-Family-History/locations/west-yorkshire/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/locations/west-yorkshire/</guid>
+      <description>An English county that includes Leeds.</description>
+    </item>
   </channel>
 </rss>

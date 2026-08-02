@@ -1,0 +1,4 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ partial "location-tree.html" (dict "pages" .Pages "empty" "No locations recorded yet.") }}
+{{ end }}

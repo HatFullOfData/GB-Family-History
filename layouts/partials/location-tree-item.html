@@ -1,0 +1,22 @@
+{{ $page := .page }}
+{{ $pages := .pages }}
+{{ $children := slice }}
+
+{{ range $candidate := $pages }}
+  {{ $parent := false }}
+  {{ with $candidate.Params.parent_location }}{{ $parent = site.GetPage . }}{{ end }}
+  {{ if eq $parent $page }}
+    {{ $children = $children | append $candidate }}
+  {{ end }}
+{{ end }}
+
+<li>
+  <a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
+  {{ with $children }}
+    <ul>
+      {{ range sort . "Title" }}
+        {{ partial "location-tree-item.html" (dict "page" . "pages" $pages) }}
+      {{ end }}
+    </ul>
+  {{ end }}
+</li>

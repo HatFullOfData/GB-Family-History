@@ -120,6 +120,19 @@ footer {
   border-radius: 999px;
 }
 
+.location-tree,
+.location-tree ul {
+  padding-left: 1.5rem;
+}
+
+.location-tree {
+  padding-left: 1.25rem;
+}
+
+.location-tree li {
+  margin: 0.25rem 0;
+}
+
 .source-card {
   display: flex;
   flex-direction: column;
