@@ -1,0 +1,102 @@
+{{ $page := .page }}
+{{ $title := .title | default "Events" }}
+{{ $empty := .empty | default "No events recorded here yet." }}
+{{ $refs := slice $page.RelPermalink $page.Permalink }}
+{{ $homeRel := strings.TrimSuffix "/" site.Home.RelPermalink }}
+{{ with $homeRel }}{{ $refs = $refs | append (strings.TrimPrefix . $page.RelPermalink) }}{{ end }}
+{{ with $page.Path }}
+  {{ $path := strings.Trim . "/" }}
+  {{ $refs = $refs | append (printf "/%s" $path) (printf "/%s/" $path) }}
+{{ end }}
+{{ with $page.File }}
+  {{ $dir := strings.Trim .Dir "/" }}
+  {{ $refs = $refs | append (printf "/%s" $dir) (printf "/%s/" $dir) }}
+{{ end }}
+{{ $events := slice }}
+{{ range where site.RegularPages "Section" "people" }}
+  {{ $person := . }}
+  {{ with .Params.birth }}
+    {{ if reflect.IsMap . }}
+      {{ $location := "" }}
+      {{ with index . "location" }}{{ $location = printf "%v" . }}{{ end }}
+      {{ if not $location }}{{ with index . "place" }}{{ $location = printf "%v" . }}{{ end }}{{ end }}
+      {{ if in $refs $location }}
+        {{ $date := "" }}
+        {{ $sortDate := "9999-99-99" }}
+        {{ with index . "display" }}{{ $date = printf "%v" . }}{{ end }}
+        {{ with index . "date" }}{{ $sortDate = printf "%v" . }}{{ end }}
+        {{ $events = $events | append (dict "person" $person "label" "Born" "date" $date "sortDate" $sortDate) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ with .Params.death }}
+    {{ if reflect.IsMap . }}
+      {{ $location := "" }}
+      {{ with index . "location" }}{{ $location = printf "%v" . }}{{ end }}
+      {{ if not $location }}{{ with index . "place" }}{{ $location = printf "%v" . }}{{ end }}{{ end }}
+      {{ if in $refs $location }}
+        {{ $date := "" }}
+        {{ $sortDate := "9999-99-99" }}
+        {{ with index . "display" }}{{ $date = printf "%v" . }}{{ end }}
+        {{ with index . "date" }}{{ $sortDate = printf "%v" . }}{{ end }}
+        {{ $events = $events | append (dict "person" $person "label" "Died" "date" $date "sortDate" $sortDate) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ range .Params.spouses }}
+    {{ if reflect.IsMap . }}
+      {{ $spouse := partial "person-page-from-link.html" . }}
+      {{ with index . "marriage" }}
+        {{ if reflect.IsMap . }}
+          {{ $marriage := . }}
+          {{ with index $marriage "location" }}
+            {{ if in $refs (printf "%v" .) }}
+              {{ $date := "" }}
+              {{ $sortDate := "9999-99-99" }}
+              {{ with index $marriage "display" }}{{ $date = printf "%v" . }}{{ end }}
+              {{ with index $marriage "date" }}{{ $sortDate = printf "%v" . }}{{ end }}
+              {{ $label := "Married" }}
+              {{ with $spouse }}{{ $label = printf "Married %s" .Title }}{{ end }}
+              {{ $events = $events | append (dict "person" $person "label" $label "date" $date "sortDate" $sortDate) }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ range .Params.events }}
+    {{ if reflect.IsMap . }}
+      {{ $event := . }}
+      {{ with index $event "location" }}
+        {{ if in $refs (printf "%v" .) }}
+          {{ $eventType := "Event" }}
+          {{ with index $event "type" }}{{ $eventType = humanize (printf "%v" .) }}{{ end }}
+          {{ $date := "" }}
+          {{ $sortDate := "9999-99-99" }}
+          {{ with index $event "display" }}{{ $date = printf "%v" . }}{{ end }}
+          {{ with index $event "date" }}{{ $sortDate = printf "%v" . }}{{ end }}
+          {{ $description := "" }}
+          {{ with index $event "description" }}{{ $description = printf "%v" . }}{{ end }}
+          {{ $events = $events | append (dict "person" $person "label" $eventType "date" $date "sortDate" $sortDate "description" $description) }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+<section>
+  <h2>{{ $title }}</h2>
+  {{ with sort $events "sortDate" }}
+    <ul class="event-list">
+      {{ range . }}
+        <li>
+          {{ with .date }}<span class="event-date">{{ . }}</span>{{ end }}
+          <a href="{{ .person.RelPermalink }}">{{ .person.Title }}</a>
+          <span class="event-label">{{ .label }}</span>
+          {{ with .description }}<span class="event-description">{{ . }}</span>{{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  {{ else }}
+    <p>{{ $empty }}</p>
+  {{ end }}
+</section>

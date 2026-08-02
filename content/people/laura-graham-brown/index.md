@@ -12,6 +12,7 @@ birth:
   date: "1968-11-12"
   display: "12 November 1968"
   place: "Lusaka, Zambia"
+  location: "/locations/lusaka/"
 
 parents:
   - person_id: "P-CAR-19400518-01"
@@ -26,5 +27,6 @@ spouses:
       date: "1994-04-09"
       display: "9 April 1994"
       place: "Stowe School, Buckingham"
+      location: "/locations/stowe-school/"
 ---
 Laura Graham-Brown was born on 12 November 1968 in Lusaka, Zambia.

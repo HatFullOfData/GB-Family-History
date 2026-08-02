@@ -8,11 +8,53 @@
     <language>en</language>
     <atom:link href="https://hatfullofdata.github.io/GB-Family-History/locations/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Buckingham</title>
+      <link>https://hatfullofdata.github.io/GB-Family-History/locations/buckingham/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/locations/buckingham/</guid>
+      <description>A market town in Buckinghamshire, near Stowe School.</description>
+    </item>
+    <item>
+      <title>Buckinghamshire</title>
+      <link>https://hatfullofdata.github.io/GB-Family-History/locations/buckinghamshire/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/locations/buckinghamshire/</guid>
+      <description>An English county that includes Buckingham and Stowe School.</description>
+    </item>
+    <item>
+      <title>England</title>
+      <link>https://hatfullofdata.github.io/GB-Family-History/locations/england/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/locations/england/</guid>
+      <description>The country in which several places in this family history are located.</description>
+    </item>
+    <item>
       <title>Leeds</title>
       <link>https://hatfullofdata.github.io/GB-Family-History/locations/leeds/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://hatfullofdata.github.io/GB-Family-History/locations/leeds/</guid>
       <description>A major Yorkshire city that appears repeatedly in this family history.</description>
+    </item>
+    <item>
+      <title>Lusaka</title>
+      <link>https://hatfullofdata.github.io/GB-Family-History/locations/lusaka/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/locations/lusaka/</guid>
+      <description>The capital city of Zambia, and the birthplace of Laura Graham-Brown.</description>
+    </item>
+    <item>
+      <title>Stowe School</title>
+      <link>https://hatfullofdata.github.io/GB-Family-History/locations/stowe-school/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/locations/stowe-school/</guid>
+      <description>An independent school near Buckingham, Buckinghamshire.</description>
+    </item>
+    <item>
+      <title>Zambia</title>
+      <link>https://hatfullofdata.github.io/GB-Family-History/locations/zambia/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hatfullofdata.github.io/GB-Family-History/locations/zambia/</guid>
+      <description>The southern African country where Laura Graham-Brown was born.</description>
     </item>
   </channel>
 </rss>

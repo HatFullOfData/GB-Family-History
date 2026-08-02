@@ -16,5 +16,6 @@ death:
 
 parents: []
 spouses: []
+events: []
 tags: []
 ---

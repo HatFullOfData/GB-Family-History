@@ -50,18 +50,22 @@ known_as: ""
 birth:
   date: "1968-11-12"          # ISO optional but recommended
   display: "12 November 1968"
-  place: "Lusaka, Zambia"
+  place: "Lusaka, Zambia"      # display text
+  location: "/locations/lusaka/" # optional link to location page
 
 living: true                    # set true for living people; summary will show present
 
 death:
   date: ""                    # ISO optional
   display: ""
-  place: ""
+   place: "Lusaka, Zambia"      # display text
+   location: "/locations/lusaka/" # optional link to location page
+  location: ""                 # optional link to location page
 
 parents:
   - person_id: "P-EXM-19400101-01"
-    person: "/people/example-parent/"   # optional compatibility field
+   place: ""                    # display text
+   location: ""                 # optional link to location page
 
 spouses:
   - person_id: "P-GRB-19631125-01"
@@ -70,11 +74,74 @@ spouses:
     marriage:
       date: "1994-04-09"              # ISO optional but recommended
       display: "9 April 1994"
-      place: "Stowe School, Buckingham"
+      place: "Stowe School, Buckingham" # display text
+      location: "/locations/stowe-school/" # optional link to location page
     end:
       date: ""                        # optional ISO
       reason: ""                      # divorce | death | separation
       display: ""                     # optional human text
+
+events:
+  - type: "lived"                     # lived | worked | baptized | buried | residence | occupation | other
+    date: ""                          # optional ISO date
+    display: ""                       # optional human date/range, e.g. "about 1901" or "1912-1918"
+    place: ""                         # display text
+    location: "/locations/example-place/" # optional link to location page
+    description: ""                   # optional note shown on the location page
+```
+
+---
+
+## Location-linked events
+
+Location pages show an **Events** section by scanning people records for location links.
+
+Use readable `place` text for display, and add a `location` path when there is a matching page under `content/locations/**/index.md`.
+
+Built-in event fields:
+
+```yaml
+birth:
+  date: "1870-02-12"
+  display: "12 February 1870"
+  place: "Leeds, Yorkshire"
+  location: "/locations/leeds/"
+
+death:
+  date: "1941-09-03"
+  display: "3 September 1941"
+  place: "Leeds, Yorkshire"
+  location: "/locations/leeds/"
+```
+
+Marriage locations live inside the relevant spouse entry:
+
+```yaml
+spouses:
+  - person_id: "P-EXM-18700101-01"
+    status: "married"
+    marriage:
+      date: "1894-04-09"
+      display: "9 April 1894"
+      place: "Stowe School, Buckingham"
+      location: "/locations/stowe-school/"
+```
+
+Use `events` for other place-linked facts:
+
+```yaml
+events:
+  - type: "worked"
+    display: "about 1901"
+    place: "Leeds, Yorkshire"
+    location: "/locations/leeds/"
+    description: "Worked as a blacksmith."
+
+  - type: "lived"
+    display: "1911"
+    place: "Leeds, Yorkshire"
+    location: "/locations/leeds/"
+    description: "Recorded there in the 1911 census."
 ```
 
 ---
@@ -94,6 +161,7 @@ spouses:
       date: "1988-05-14"
       display: "14 May 1988"
       place: "Leeds, England"
+      location: "/locations/leeds/"
     end:
       date: "1996-09-01"
       reason: "divorce"
@@ -105,6 +173,7 @@ spouses:
       date: "2001-07-21"
       display: "21 July 2001"
       place: "Durham, England"
+      location: "/locations/durham/"
 ```
 
 ---

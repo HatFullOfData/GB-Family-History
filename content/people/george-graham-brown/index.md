@@ -23,5 +23,6 @@ spouses:
       date: "1994-04-09"
       display: "9 April 1994"
       place: "Stowe School, Buckingham"
+      location: "/locations/stowe-school/"
 ---
 

@@ -9,6 +9,7 @@
     )) }}
     <div>{{ .Content }}</div>
     {{ partial "backlink-list.html" (dict "page" . "section" "locations" "param" "parent_location" "match" "eq" "title" "Child locations" "empty" "No child locations recorded.") }}
+    {{ partial "related-events-by-location.html" (dict "page" . "title" "Events" "empty" "No events recorded here yet.") }}
     {{ partial "backlink-list.html" (dict "page" . "section" "stories" "param" "locations" "title" "Stories" "empty" "No related stories yet.") }}
   </article>
 {{ end }}

@@ -31,5 +31,11 @@ spouses:
     marriage:
       date: "1963-07-13"
       display: "13 July 1963"
+events:
+  - type: "lived"
+    date: "1988"
+    display: "1988 to 1998"
+    place: "Stowe School, Buckingham"
+    location: "/locations/stowe-school/"
 ---
 

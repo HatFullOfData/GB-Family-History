@@ -1,11 +1,28 @@
 {{ $page := .page }}
 {{ $pages := where site.RegularPages "Section" .section }}
-{{ $key := printf "Params.%s" .param }}
+{{ $param := .param }}
 {{ $matches := slice }}
-{{ if eq (.match | default "intersect") "eq" }}
-  {{ $matches = where $pages $key "eq" $page.RelPermalink }}
-{{ else }}
-  {{ $matches = where $pages $key "intersect" (slice $page.RelPermalink) }}
+{{ $refs := slice $page.RelPermalink $page.Permalink }}
+{{ $homeRel := strings.TrimSuffix "/" site.Home.RelPermalink }}
+{{ with $homeRel }}{{ $refs = $refs | append (strings.TrimPrefix . $page.RelPermalink) }}{{ end }}
+{{ with $page.Path }}
+  {{ $path := strings.Trim . "/" }}
+  {{ $refs = $refs | append (printf "/%s" $path) (printf "/%s/" $path) }}
+{{ end }}
+{{ with $page.File }}
+  {{ $dir := strings.Trim .Dir "/" }}
+  {{ $refs = $refs | append (printf "/%s" $dir) (printf "/%s/" $dir) }}
+{{ end }}
+{{ $match := .match | default "intersect" }}
+{{ range $candidate := $pages }}
+  {{ $value := index $candidate.Params $param }}
+  {{ if eq $match "eq" }}
+    {{ if and $value (in $refs $value) }}{{ $matches = $matches | append $candidate }}{{ end }}
+  {{ else }}
+    {{ with $value }}
+      {{ if intersect . $refs }}{{ $matches = $matches | append $candidate }}{{ end }}
+    {{ end }}
+  {{ end }}
 {{ end }}
 <section>
   <h2>{{ .title }}</h2>

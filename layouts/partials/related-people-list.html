@@ -1,0 +1,567 @@
+{{ $page := .page }}
+{{ $pageId := $page.Params.id }}
+{{ $parentKeys := slice }}
+{{ $grandparentKeys := slice }}
+{{ $greatGrandparentKeys := slice }}
+{{ $spousePages := slice }}
+{{ $childPages := partial "child-pages.html" $page }}
+{{ $relations := slice }}
+
+{{ range $page.Params.spouses }}
+  {{ $spouse := partial "person-page-from-link.html" . }}
+  {{ with $spouse }}
+    {{ $spousePages = $spousePages | append . }}
+  {{ end }}
+{{ end }}
+
+{{ range $page.Params.parents }}
+  {{ $key := "" }}
+  {{ if reflect.IsMap . }}
+    {{ with index . "person_id" }}
+      {{ $key = printf "id:%v" . }}
+    {{ end }}
+    {{ if not $key }}
+      {{ with index . "person" }}
+        {{ $key = printf "page:%v" . }}
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    {{ $key = printf "page:%v" . }}
+  {{ end }}
+  {{ with $key }}
+    {{ $parentKeys = $parentKeys | append . }}
+  {{ end }}
+{{ end }}
+
+{{ $parentKeys = uniq $parentKeys }}
+
+{{ range $page.Params.parents }}
+  {{ $parent := partial "person-page-from-link.html" . }}
+  {{ with $parent }}
+    {{ range .Params.parents }}
+      {{ $grandparent := partial "person-page-from-link.html" . }}
+      {{ with $grandparent }}
+        {{ $key := "" }}
+        {{ with .Params.id }}
+          {{ $key = printf "id:%v" . }}
+        {{ end }}
+        {{ if not $key }}
+          {{ $key = printf "page:%v" .RelPermalink }}
+        {{ end }}
+        {{ $grandparentKeys = $grandparentKeys | append $key }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ $grandparentKeys = uniq $grandparentKeys }}
+
+{{ range $page.Params.parents }}
+  {{ $parent := partial "person-page-from-link.html" . }}
+  {{ with $parent }}
+    {{ range .Params.parents }}
+      {{ $grandparent := partial "person-page-from-link.html" . }}
+      {{ with $grandparent }}
+        {{ range .Params.parents }}
+          {{ $greatGrandparent := partial "person-page-from-link.html" . }}
+          {{ with $greatGrandparent }}
+            {{ $key := "" }}
+            {{ with .Params.id }}
+              {{ $key = printf "id:%v" . }}
+            {{ end }}
+            {{ if not $key }}
+              {{ $key = printf "page:%v" .RelPermalink }}
+            {{ end }}
+            {{ $greatGrandparentKeys = $greatGrandparentKeys | append $key }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ $greatGrandparentKeys = uniq $greatGrandparentKeys }}
+
+{{ range where site.RegularPages "Section" "people" }}
+  {{ $candidate := . }}
+  {{ if ne $candidate.RelPermalink $page.RelPermalink }}
+    {{ $relationship := "" }}
+    {{ $relationshipOrder := 99 }}
+    {{ $candidateParentKeysForRelations := slice }}
+    {{ $candidateGrandparentKeysForRelations := slice }}
+    {{ $candidateGreatGrandparentKeysForRelations := slice }}
+    {{ $candidateSpousePages := slice }}
+
+    {{ range $candidate.Params.parents }}
+      {{ $parent := partial "person-page-from-link.html" . }}
+      {{ with $parent }}
+        {{ $key := "" }}
+        {{ with .Params.id }}
+          {{ $key = printf "id:%v" . }}
+        {{ end }}
+        {{ if not $key }}
+          {{ $key = printf "page:%v" .RelPermalink }}
+        {{ end }}
+        {{ $candidateParentKeysForRelations = $candidateParentKeysForRelations | append $key }}
+
+        {{ range .Params.parents }}
+          {{ $grandparent := partial "person-page-from-link.html" . }}
+          {{ with $grandparent }}
+            {{ $key := "" }}
+            {{ with .Params.id }}
+              {{ $key = printf "id:%v" . }}
+            {{ end }}
+            {{ if not $key }}
+              {{ $key = printf "page:%v" .RelPermalink }}
+            {{ end }}
+            {{ $candidateGrandparentKeysForRelations = $candidateGrandparentKeysForRelations | append $key }}
+
+            {{ range .Params.parents }}
+              {{ $greatGrandparent := partial "person-page-from-link.html" . }}
+              {{ with $greatGrandparent }}
+                {{ $key := "" }}
+                {{ with .Params.id }}
+                  {{ $key = printf "id:%v" . }}
+                {{ end }}
+                {{ if not $key }}
+                  {{ $key = printf "page:%v" .RelPermalink }}
+                {{ end }}
+                {{ $candidateGreatGrandparentKeysForRelations = $candidateGreatGrandparentKeysForRelations | append $key }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ range $candidate.Params.spouses }}
+      {{ $spouse := partial "person-page-from-link.html" . }}
+      {{ with $spouse }}
+        {{ $candidateSpousePages = $candidateSpousePages | append . }}
+      {{ end }}
+    {{ end }}
+
+    {{ $candidateParentKeysForRelations = uniq $candidateParentKeysForRelations }}
+    {{ $candidateGrandparentKeysForRelations = uniq $candidateGrandparentKeysForRelations }}
+    {{ $candidateGreatGrandparentKeysForRelations = uniq $candidateGreatGrandparentKeysForRelations }}
+
+    {{ range $page.Params.parents }}
+      {{ if not $relationship }}
+        {{ $parent := partial "person-page-from-link.html" . }}
+        {{ with $parent }}
+          {{ range .Params.parents }}
+            {{ if not $relationship }}
+              {{ $grandparent := partial "person-page-from-link.html" . }}
+              {{ with $grandparent }}
+                {{ range .Params.parents }}
+                  {{ if not $relationship }}
+                    {{ $target := partial "person-page-from-link.html" . }}
+                    {{ with $target }}
+                      {{ if or (eq .RelPermalink $candidate.RelPermalink) (and .Params.id (eq .Params.id $candidate.Params.id)) }}
+                        {{ $relationship = "Great-grandparent" }}
+                        {{ $relationshipOrder = 0 }}
+                      {{ end }}
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ range $page.Params.parents }}
+      {{ if not $relationship }}
+        {{ $parent := partial "person-page-from-link.html" . }}
+        {{ with $parent }}
+          {{ range .Params.parents }}
+            {{ if not $relationship }}
+              {{ $target := partial "person-page-from-link.html" . }}
+              {{ with $target }}
+                {{ if or (eq .RelPermalink $candidate.RelPermalink) (and .Params.id (eq .Params.id $candidate.Params.id)) }}
+                  {{ $relationship = "Grandparent" }}
+                  {{ $relationshipOrder = 1 }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ range $page.Params.parents }}
+      {{ if not $relationship }}
+        {{ $target := partial "person-page-from-link.html" . }}
+        {{ with $target }}
+          {{ if or (eq .RelPermalink $candidate.RelPermalink) (and .Params.id (eq .Params.id $candidate.Params.id)) }}
+            {{ $relationship = "Parent" }}
+            {{ $relationshipOrder = 2 }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ range $page.Params.spouses }}
+      {{ if not $relationship }}
+        {{ $target := partial "person-page-from-link.html" . }}
+        {{ with $target }}
+          {{ if or (eq .RelPermalink $candidate.RelPermalink) (and .Params.id (eq .Params.id $candidate.Params.id)) }}
+            {{ $relationship = "Spouse" }}
+            {{ $relationshipOrder = 3 }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ range $candidate.Params.spouses }}
+      {{ if not $relationship }}
+        {{ $target := partial "person-page-from-link.html" . }}
+        {{ with $target }}
+          {{ if or (eq .RelPermalink $page.RelPermalink) (and .Params.id (eq .Params.id $pageId)) }}
+            {{ $relationship = "Spouse" }}
+            {{ $relationshipOrder = 3 }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ range $page.Params.parents }}
+      {{ if not $relationship }}
+        {{ $parent := partial "person-page-from-link.html" . }}
+        {{ with $parent }}
+          {{ range .Params.spouses }}
+            {{ if not $relationship }}
+              {{ $target := partial "person-page-from-link.html" . }}
+              {{ with $target }}
+                {{ if or (eq .RelPermalink $candidate.RelPermalink) (and .Params.id (eq .Params.id $candidate.Params.id)) }}
+                  {{ $relationship = "Step-parent" }}
+                  {{ $relationshipOrder = 13 }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ range $spousePages }}
+      {{ if not $relationship }}
+        {{ range .Params.parents }}
+          {{ if not $relationship }}
+            {{ $target := partial "person-page-from-link.html" . }}
+            {{ with $target }}
+              {{ if or (eq .RelPermalink $candidate.RelPermalink) (and .Params.id (eq .Params.id $candidate.Params.id)) }}
+                {{ $relationship = "Parent-in-law" }}
+                {{ $relationshipOrder = 14 }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ range $candidate.Params.parents }}
+      {{ if not $relationship }}
+        {{ $target := partial "person-page-from-link.html" . }}
+        {{ with $target }}
+          {{ if or (eq .RelPermalink $page.RelPermalink) (and .Params.id (eq .Params.id $pageId)) }}
+            {{ $relationship = "Child" }}
+            {{ $relationshipOrder = 6 }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ range $candidate.Params.parents }}
+      {{ if not $relationship }}
+        {{ $parent := partial "person-page-from-link.html" . }}
+        {{ with $parent }}
+          {{ range .Params.parents }}
+            {{ if not $relationship }}
+              {{ $target := partial "person-page-from-link.html" . }}
+              {{ with $target }}
+                {{ if or (eq .RelPermalink $page.RelPermalink) (and .Params.id (eq .Params.id $pageId)) }}
+                  {{ $relationship = "Grandchild" }}
+                  {{ $relationshipOrder = 7 }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ range $candidate.Params.parents }}
+      {{ if not $relationship }}
+        {{ $parent := partial "person-page-from-link.html" . }}
+        {{ with $parent }}
+          {{ range .Params.parents }}
+            {{ if not $relationship }}
+              {{ $grandparent := partial "person-page-from-link.html" . }}
+              {{ with $grandparent }}
+                {{ range .Params.parents }}
+                  {{ if not $relationship }}
+                    {{ $target := partial "person-page-from-link.html" . }}
+                    {{ with $target }}
+                      {{ if or (eq .RelPermalink $page.RelPermalink) (and .Params.id (eq .Params.id $pageId)) }}
+                        {{ $relationship = "Great-grandchild" }}
+                        {{ $relationshipOrder = 8 }}
+                      {{ end }}
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ range $spousePages }}
+      {{ if not $relationship }}
+        {{ range partial "child-pages.html" . }}
+          {{ if and (not $relationship) (eq .RelPermalink $candidate.RelPermalink) }}
+            {{ $relationship = "Step-child" }}
+            {{ $relationshipOrder = 15 }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ range $childPages }}
+      {{ if not $relationship }}
+        {{ range .Params.spouses }}
+          {{ if not $relationship }}
+            {{ $target := partial "person-page-from-link.html" . }}
+            {{ with $target }}
+              {{ if or (eq .RelPermalink $candidate.RelPermalink) (and .Params.id (eq .Params.id $candidate.Params.id)) }}
+                {{ $relationship = "Child-in-law" }}
+                {{ $relationshipOrder = 16 }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ if and (not $relationship) $parentKeys }}
+      {{ $candidateParentKeys := slice }}
+      {{ range $candidate.Params.parents }}
+        {{ $key := "" }}
+        {{ if reflect.IsMap . }}
+          {{ with index . "person_id" }}
+            {{ $key = printf "id:%v" . }}
+          {{ end }}
+          {{ if not $key }}
+            {{ with index . "person" }}
+              {{ $key = printf "page:%v" . }}
+            {{ end }}
+          {{ end }}
+        {{ else }}
+          {{ $key = printf "page:%v" . }}
+        {{ end }}
+        {{ with $key }}
+          {{ $candidateParentKeys = $candidateParentKeys | append . }}
+        {{ end }}
+      {{ end }}
+
+      {{ $sharedParents := len (intersect $parentKeys (uniq $candidateParentKeys)) }}
+      {{ if ge $sharedParents 2 }}
+        {{ $relationship = "Sibling" }}
+        {{ $relationshipOrder = 4 }}
+      {{ else if eq $sharedParents 1 }}
+        {{ $relationship = "Half sibling" }}
+        {{ $relationshipOrder = 5 }}
+      {{ end }}
+    {{ end }}
+
+    {{ if and (not $relationship) $parentKeys }}
+      {{ range $candidateSpousePages }}
+        {{ if not $relationship }}
+          {{ $candidateSpouseParentKeys := slice }}
+          {{ range .Params.parents }}
+            {{ $parent := partial "person-page-from-link.html" . }}
+            {{ with $parent }}
+              {{ $key := "" }}
+              {{ with .Params.id }}
+                {{ $key = printf "id:%v" . }}
+              {{ end }}
+              {{ if not $key }}
+                {{ $key = printf "page:%v" .RelPermalink }}
+              {{ end }}
+              {{ $candidateSpouseParentKeys = $candidateSpouseParentKeys | append $key }}
+            {{ end }}
+          {{ end }}
+          {{ if intersect $parentKeys (uniq $candidateSpouseParentKeys) }}
+            {{ $relationship = "Sibling-in-law" }}
+            {{ $relationshipOrder = 17 }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
+      {{ range $spousePages }}
+        {{ if not $relationship }}
+          {{ $spouseParentKeys := slice }}
+          {{ range .Params.parents }}
+            {{ $parent := partial "person-page-from-link.html" . }}
+            {{ with $parent }}
+              {{ $key := "" }}
+              {{ with .Params.id }}
+                {{ $key = printf "id:%v" . }}
+              {{ end }}
+              {{ if not $key }}
+                {{ $key = printf "page:%v" .RelPermalink }}
+              {{ end }}
+              {{ $spouseParentKeys = $spouseParentKeys | append $key }}
+            {{ end }}
+          {{ end }}
+          {{ if intersect (uniq $spouseParentKeys) $candidateParentKeysForRelations }}
+            {{ $relationship = "Sibling-in-law" }}
+            {{ $relationshipOrder = 17 }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ if and (not $relationship) $grandparentKeys }}
+      {{ $candidateParentKeys := slice }}
+      {{ range $candidate.Params.parents }}
+        {{ $parent := partial "person-page-from-link.html" . }}
+        {{ with $parent }}
+          {{ $key := "" }}
+          {{ with .Params.id }}
+            {{ $key = printf "id:%v" . }}
+          {{ end }}
+          {{ if not $key }}
+            {{ $key = printf "page:%v" .RelPermalink }}
+          {{ end }}
+          {{ $candidateParentKeys = $candidateParentKeys | append $key }}
+        {{ end }}
+      {{ end }}
+
+      {{ if intersect $grandparentKeys (uniq $candidateParentKeys) }}
+        {{ $relationship = "Uncle/Aunt" }}
+        {{ $relationshipOrder = 9 }}
+      {{ end }}
+    {{ end }}
+
+    {{ if and (not $relationship) $parentKeys }}
+      {{ $candidateGrandparentKeys := slice }}
+      {{ range $candidate.Params.parents }}
+        {{ $parent := partial "person-page-from-link.html" . }}
+        {{ with $parent }}
+          {{ range .Params.parents }}
+            {{ $grandparent := partial "person-page-from-link.html" . }}
+            {{ with $grandparent }}
+              {{ $key := "" }}
+              {{ with .Params.id }}
+                {{ $key = printf "id:%v" . }}
+              {{ end }}
+              {{ if not $key }}
+                {{ $key = printf "page:%v" .RelPermalink }}
+              {{ end }}
+              {{ $candidateGrandparentKeys = $candidateGrandparentKeys | append $key }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
+      {{ if intersect $parentKeys (uniq $candidateGrandparentKeys) }}
+        {{ $relationship = "Niece/Nephew" }}
+        {{ $relationshipOrder = 10 }}
+      {{ end }}
+    {{ end }}
+
+    {{ if and (not $relationship) $parentKeys $candidateGreatGrandparentKeysForRelations }}
+      {{ if intersect $parentKeys $candidateGreatGrandparentKeysForRelations }}
+        {{ $relationship = "Great-niece/nephew" }}
+        {{ $relationshipOrder = 18 }}
+      {{ end }}
+    {{ end }}
+
+    {{ if and (not $relationship) $greatGrandparentKeys }}
+      {{ $candidateParentKeys := slice }}
+      {{ range $candidate.Params.parents }}
+        {{ $parent := partial "person-page-from-link.html" . }}
+        {{ with $parent }}
+          {{ $key := "" }}
+          {{ with .Params.id }}
+            {{ $key = printf "id:%v" . }}
+          {{ end }}
+          {{ if not $key }}
+            {{ $key = printf "page:%v" .RelPermalink }}
+          {{ end }}
+          {{ $candidateParentKeys = $candidateParentKeys | append $key }}
+        {{ end }}
+      {{ end }}
+
+      {{ if intersect $greatGrandparentKeys (uniq $candidateParentKeys) }}
+        {{ $relationship = "Great-uncle/aunt" }}
+        {{ $relationshipOrder = 11 }}
+      {{ end }}
+    {{ end }}
+
+    {{ if and (not $relationship) $grandparentKeys }}
+      {{ $candidateGrandparentKeys := slice }}
+      {{ range $candidate.Params.parents }}
+        {{ $parent := partial "person-page-from-link.html" . }}
+        {{ with $parent }}
+          {{ range .Params.parents }}
+            {{ $grandparent := partial "person-page-from-link.html" . }}
+            {{ with $grandparent }}
+              {{ $key := "" }}
+              {{ with .Params.id }}
+                {{ $key = printf "id:%v" . }}
+              {{ end }}
+              {{ if not $key }}
+                {{ $key = printf "page:%v" .RelPermalink }}
+              {{ end }}
+              {{ $candidateGrandparentKeys = $candidateGrandparentKeys | append $key }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
+      {{ if intersect $grandparentKeys (uniq $candidateGrandparentKeys) }}
+        {{ $relationship = "1st cousin" }}
+        {{ $relationshipOrder = 12 }}
+      {{ end }}
+    {{ end }}
+
+    {{ if and (not $relationship) (or (and $grandparentKeys $candidateGreatGrandparentKeysForRelations) (and $greatGrandparentKeys $candidateGrandparentKeysForRelations)) }}
+      {{ if or (intersect $grandparentKeys $candidateGreatGrandparentKeysForRelations) (intersect $greatGrandparentKeys $candidateGrandparentKeysForRelations) }}
+        {{ $relationship = "1st cousin once removed" }}
+        {{ $relationshipOrder = 19 }}
+      {{ end }}
+    {{ end }}
+
+    {{ if and (not $relationship) $greatGrandparentKeys $candidateGreatGrandparentKeysForRelations }}
+      {{ if intersect $greatGrandparentKeys $candidateGreatGrandparentKeysForRelations }}
+        {{ $relationship = "2nd cousin" }}
+        {{ $relationshipOrder = 20 }}
+      {{ end }}
+    {{ end }}
+
+    {{ with $relationship }}
+      {{ $birthDate := "9999" }}
+      {{ with $candidate.Params.birth.date }}
+        {{ $birthDate = printf "%v" . }}
+      {{ end }}
+      {{ $relations = $relations | append (dict "page" $candidate "relationship" . "sortKey" (printf "%02d|%s|%s" $relationshipOrder $birthDate $candidate.Title)) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<section>
+  <h2>Relations</h2>
+  {{ with sort $relations "sortKey" }}
+    <div class="relation-list">
+      {{ range . }}
+        {{ partial "person-summary.html" (dict "page" .page "extranote" .relationship) }}
+      {{ end }}
+    </div>
+  {{ else }}
+    <p>No relations recorded.</p>
+  {{ end }}
+</section>

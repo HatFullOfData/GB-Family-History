@@ -28,5 +28,11 @@ spouses:
     marriage:
       date: "1963-07-13"
       display: "13 July 1963"
+events:
+  - type: "lived"
+    date: "1988"
+    display: "1988 to 1998"
+    place: "Stowe School, Buckingham"
+    location: "/locations/stowe-school/"
 ---
 Michael Ashley Carpenter appears in the family history archive, with a recorded birth of 18 May 1940.
