@@ -36,6 +36,7 @@
         {{ $sortDate := "9999-99-99" }}
         {{ with index . "display" }}{{ $date = printf "%v" . }}{{ end }}
         {{ with index . "date" }}{{ $sortDate = printf "%v" . }}{{ end }}
+        {{ $date = partial "event-year-display.html" (dict "display" $date "date" (index . "date")) }}
         {{ $events = $events | append (dict "person" $person "label" "Born" "date" $date "sortDate" $sortDate) }}
       {{ end }}
     {{ end }}
@@ -50,6 +51,7 @@
         {{ $sortDate := "9999-99-99" }}
         {{ with index . "display" }}{{ $date = printf "%v" . }}{{ end }}
         {{ with index . "date" }}{{ $sortDate = printf "%v" . }}{{ end }}
+        {{ $date = partial "event-year-display.html" (dict "display" $date "date" (index . "date")) }}
         {{ $events = $events | append (dict "person" $person "label" "Died" "date" $date "sortDate" $sortDate) }}
       {{ end }}
     {{ end }}
@@ -73,6 +75,7 @@
                 {{ $sortDate := "9999-99-99" }}
                 {{ with index $marriage "display" }}{{ $date = printf "%v" . }}{{ end }}
                 {{ with index $marriage "date" }}{{ $sortDate = printf "%v" . }}{{ end }}
+                {{ $date = partial "event-year-display.html" (dict "display" $date "date" (index $marriage "date")) }}
                 {{ $label := "Married" }}
                 {{ with $spouse }}{{ $label = printf "Married %s" .Title }}{{ end }}
                 {{ $events = $events | append (dict "person" $person "label" $label "date" $date "sortDate" $sortDate) }}
@@ -94,6 +97,7 @@
           {{ $sortDate := "9999-99-99" }}
           {{ with index $event "display" }}{{ $date = printf "%v" . }}{{ end }}
           {{ with index $event "date" }}{{ $sortDate = printf "%v" . }}{{ end }}
+          {{ $date = partial "event-year-display.html" (dict "display" $date "date" (index $event "date")) }}
           {{ $description := "" }}
           {{ with index $event "description" }}{{ $description = printf "%v" . }}{{ end }}
           {{ $events = $events | append (dict "person" $person "label" $eventType "date" $date "sortDate" $sortDate "description" $description) }}

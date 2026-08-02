@@ -1,0 +1,16 @@
+{{ $display := "" }}
+{{ with .display }}{{ $display = printf "%v" . }}{{ end }}
+{{ if not (findRE "[0-9]{4}.*[0-9]{4}" $display) }}
+  {{ with .date }}
+    {{ $date := printf "%v" . }}
+    {{ if ge (len $date) 4 }}
+      {{ $display = slicestr $date 0 4 }}
+    {{ else }}
+      {{ $display = $date }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ if not .date }}
+  {{ $display = replaceRE "^[0-9]{1,2} [A-Za-z]+ ([0-9]{4})$" "$1" $display }}
+{{ end }}
+{{ return $display }}

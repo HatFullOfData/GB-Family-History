@@ -7,6 +7,7 @@
     {{ $sortDate := "9999-99-99" }}
     {{ with index . "display" }}{{ $date = printf "%v" . }}{{ end }}
     {{ with index . "date" }}{{ $sortDate = printf "%v" . }}{{ end }}
+    {{ $date = partial "event-year-display.html" (dict "display" $date "date" (index . "date")) }}
     {{ $place := "" }}
     {{ $location := false }}
     {{ with index . "place" }}{{ $place = printf "%v" . }}{{ end }}
@@ -23,6 +24,7 @@
     {{ $sortDate := "9999-99-99" }}
     {{ with index . "display" }}{{ $date = printf "%v" . }}{{ end }}
     {{ with index . "date" }}{{ $sortDate = printf "%v" . }}{{ end }}
+    {{ $date = partial "event-year-display.html" (dict "display" $date "date" (index . "date")) }}
     {{ $place := "" }}
     {{ $location := false }}
     {{ with index . "place" }}{{ $place = printf "%v" . }}{{ end }}
@@ -42,6 +44,7 @@
         {{ $sortDate := "9999-99-99" }}
         {{ with index . "display" }}{{ $date = printf "%v" . }}{{ end }}
         {{ with index . "date" }}{{ $sortDate = printf "%v" . }}{{ end }}
+        {{ $date = partial "event-year-display.html" (dict "display" $date "date" (index . "date")) }}
         {{ $place := "" }}
         {{ $location := false }}
         {{ with index . "place" }}{{ $place = printf "%v" . }}{{ end }}
@@ -62,6 +65,7 @@
     {{ $sortDate := "9999-99-99" }}
     {{ with index . "display" }}{{ $date = printf "%v" . }}{{ end }}
     {{ with index . "date" }}{{ $sortDate = printf "%v" . }}{{ end }}
+    {{ $date = partial "event-year-display.html" (dict "display" $date "date" (index . "date")) }}
     {{ $place := "" }}
     {{ $location := false }}
     {{ with index . "place" }}{{ $place = printf "%v" . }}{{ end }}
