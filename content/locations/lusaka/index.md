@@ -1,6 +1,6 @@
 ---
 title: "Lusaka"
-summary: "The capital city of Zambia, and the birthplace of Laura Graham-Brown."
+summary: "The capital city of Zambia, and the birthplace of Laura Carpenter."
 place_type: "city"
 parent_location: "/locations/zambia/"
 coordinates:
@@ -11,4 +11,4 @@ tags:
   - "lusaka"
   - "zambia"
 ---
-Lusaka is the capital city of Zambia, and the birthplace of Laura Graham-Brown.
+Lusaka is the capital city of Zambia, and the birthplace of Laura Carpenter.

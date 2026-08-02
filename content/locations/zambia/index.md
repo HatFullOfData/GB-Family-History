@@ -1,6 +1,6 @@
 ---
 title: "Zambia"
-summary: "The southern African country where Laura Graham-Brown was born."
+summary: "The southern African country where Laura Carpenter was born."
 place_type: "country"
 parent_location: ""
 coordinates:
@@ -10,4 +10,4 @@ coordinates:
 tags:
   - "zambia"
 ---
-Zambia is the southern African country where Laura Graham-Brown was born.
+Zambia is the southern African country where Laura Carpenter was born.

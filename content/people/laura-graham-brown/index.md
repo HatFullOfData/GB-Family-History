@@ -1,9 +1,9 @@
 ---
 id: "P-GRB-19681112-01"
-title: "Laura Graham-Brown"
-summary: "Laura Graham-Brown was born in Lusaka, Zambia."
+title: "Laura Carpenter"
+summary: "Laura Carpenter was born in Lusaka, Zambia."
 given_name: "Laura"
-surname: "Graham-Brown"
+surname: "Carpenter"
 portrait: "images/people/LauraGB.png"
 
 living: true
@@ -29,4 +29,4 @@ spouses:
       place: "Stowe School, Buckingham"
       location: "/locations/stowe-school/"
 ---
-Laura Graham-Brown was born on 12 November 1968 in Lusaka, Zambia.
+Laura Carpenter was born on 12 November 1968 in Lusaka, Zambia.
