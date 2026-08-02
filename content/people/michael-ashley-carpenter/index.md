@@ -30,6 +30,11 @@ spouses:
       display: "13 July 1963"
 events:
   - type: "lived"
+    date: "1965"
+    display: "1965 to 1972"
+    place: "Lusaka, Zambia"
+    location: "/locations/lusaka/"
+  - type: "lived"
     date: "1988"
     display: "1988 to 1998"
     place: "Stowe School, Buckingham"
